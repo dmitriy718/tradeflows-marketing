@@ -1,0 +1,308 @@
+import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+import './HomePage.css'
+
+export default function HomePage() {
+  return (
+    <>
+      <Helmet>
+        <title>TradeFlows Pro - AI-Powered Professional Trading Platform</title>
+        <meta name="description" content="Transform your trading with AI-powered strategies, real-time market data, and advanced portfolio analytics. Start your 7-day free trial today." />
+      </Helmet>
+
+      <div className="home-page">
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="hero-background">
+            <div className="hero-grid"></div>
+            <div className="hero-glow hero-glow-1"></div>
+            <div className="hero-glow hero-glow-2"></div>
+          </div>
+
+          <div className="container hero-content">
+            <div className="hero-text">
+              <div className="hero-badge">
+                <span className="badge-icon">✨</span>
+                <span>Powered by Advanced AI</span>
+              </div>
+              <h1 className="hero-title">
+                Trade Smarter with{' '}
+                <span className="gradient-text">AI-Powered Insights</span>
+              </h1>
+              <p className="hero-description">
+                TradeFlows Pro combines real-time market data, intelligent strategy recommendations, and advanced portfolio analytics to help you make confident trading decisions. Join thousands of traders who've transformed their approach.
+              </p>
+              <div className="hero-actions">
+                <a href="https://app.tradeflows.net?signup=true" className="btn btn-hero-primary">
+                  Start Free 7-Day Trial
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M7 10h6m0 0L10 7m3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </a>
+                <Link to="/features" className="btn btn-hero-secondary">
+                  Explore Features
+                </Link>
+              </div>
+              <div className="hero-trust">
+                <div className="trust-stats">
+                  <div className="stat">
+                    <div className="stat-value">50K+</div>
+                    <div className="stat-label">Active Traders</div>
+                  </div>
+                  <div className="stat">
+                    <div className="stat-value">$2.5B+</div>
+                    <div className="stat-label">Trading Volume</div>
+                  </div>
+                  <div className="stat">
+                    <div className="stat-value">4.9/5</div>
+                    <div className="stat-label">User Rating</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              <div className="dashboard-preview">
+                <div className="preview-card">
+                  <div className="card-header">
+                    <span className="indicator pulse"></span>
+                    <span>Live Trading Dashboard</span>
+                  </div>
+                  <div className="preview-chart">
+                    <svg viewBox="0 0 400 200" className="chart-svg">
+                      <path d="M 10 150 Q 50 120, 90 130 T 170 110 Q 210 100, 250 90 T 330 70 Q 370 60, 390 50"
+                            stroke="url(#chartGradient)" strokeWidth="3" fill="none"/>
+                      <defs>
+                        <linearGradient id="chartGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                          <stop offset="0%" stopColor="#3b9eff"/>
+                          <stop offset="100%" stopColor="#10b981"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div className="preview-metrics">
+                    <div className="metric positive">
+                      <span>+12.5%</span>
+                      <span className="metric-label">Today</span>
+                    </div>
+                    <div className="metric positive">
+                      <span>+45.2%</span>
+                      <span className="metric-label">This Month</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features Overview */}
+        <section className="features-overview section">
+          <div className="container">
+            <div className="section-header text-center">
+              <h2>Everything You Need to Trade Like a Pro</h2>
+              <p>Powerful features designed for serious traders</p>
+            </div>
+
+            <div className="features-grid">
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M35 20C35 28.284 28.284 35 20 35C11.716 35 5 28.284 5 20C5 11.716 11.716 5 20 5C28.284 5 35 11.716 35 20Z" stroke="url(#iconGrad1)" strokeWidth="2"/>
+                    <path d="M20 10V20L27 27" stroke="url(#iconGrad1)" strokeWidth="2" strokeLinecap="round"/>
+                    <defs>
+                      <linearGradient id="iconGrad1"><stop stopColor="#3b9eff"/><stop offset="1" stopColor="#a78bfa"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>Real-Time Market Data</h3>
+                <p>Live streaming quotes, charts, and market depth across stocks, crypto, forex, and commodities. Never miss a trading opportunity.</p>
+                <Link to="/features#real-time-data" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="6" y="12" width="28" height="20" rx="2" stroke="url(#iconGrad2)" strokeWidth="2"/>
+                    <path d="M12 8L20 15L28 8" stroke="url(#iconGrad2)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <circle cx="15" cy="22" r="2" fill="#3b9eff"/>
+                    <circle cx="25" cy="22" r="2" fill="#10b981"/>
+                    <defs>
+                      <linearGradient id="iconGrad2"><stop stopColor="#3b9eff"/><stop offset="1" stopColor="#10b981"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>AI Strategy Builder</h3>
+                <p>Let our AI analyze market conditions and suggest optimal trading strategies based on your risk profile and goals.</p>
+                <Link to="/features#ai-strategies" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M8 15L20 8L32 15V28C32 29.105 31.105 30 30 30H10C8.895 30 8 29.105 8 28V15Z" stroke="url(#iconGrad3)" strokeWidth="2"/>
+                    <path d="M20 30V20" stroke="url(#iconGrad3)" strokeWidth="2"/>
+                    <defs>
+                      <linearGradient id="iconGrad3"><stop stopColor="#10b981"/><stop offset="1" stopColor="#3b9eff"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>Advanced Portfolio Management</h3>
+                <p>Track performance, analyze risk, and optimize your portfolio with institutional-grade analytics and reporting.</p>
+                <Link to="/features#portfolio" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="12" stroke="url(#iconGrad4)" strokeWidth="2"/>
+                    <path d="M20 14V20L24 24" stroke="url(#iconGrad4)" strokeWidth="2" strokeLinecap="round"/>
+                    <defs>
+                      <linearGradient id="iconGrad4"><stop stopColor="#a78bfa"/><stop offset="1" stopColor="#3b9eff"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>Smart Alerts & Notifications</h3>
+                <p>Custom price alerts, technical indicator signals, and AI-powered trade notifications delivered instantly.</p>
+                <Link to="/features#alerts" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="8" y="10" width="24" height="22" rx="2" stroke="url(#iconGrad5)" strokeWidth="2"/>
+                    <path d="M12 16H28M12 22H28M12 28H22" stroke="url(#iconGrad5)" strokeWidth="2" strokeLinecap="round"/>
+                    <defs>
+                      <linearGradient id="iconGrad5"><stop stopColor="#3b9eff"/><stop offset="1" stopColor="#a78bfa"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>Technical Analysis Tools</h3>
+                <p>100+ technical indicators, drawing tools, and chart patterns. Everything professional traders need in one platform.</p>
+                <Link to="/features#technical-analysis" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+
+              <div className="feature-card">
+                <div className="feature-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <rect x="8" y="15" width="10" height="17" rx="1" stroke="url(#iconGrad6)" strokeWidth="2"/>
+                    <rect x="22" y="10" width="10" height="22" rx="1" stroke="url(#iconGrad6)" strokeWidth="2"/>
+                    <defs>
+                      <linearGradient id="iconGrad6"><stop stopColor="#10b981"/><stop offset="1" stopColor="#3b9eff"/></linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+                <h3>Performance Analytics</h3>
+                <p>Detailed P&L tracking, win/loss ratios, and performance metrics to continuously improve your trading.</p>
+                <Link to="/features#analytics" className="feature-link">
+                  Learn more →
+                </Link>
+              </div>
+            </div>
+
+            <div className="section-cta">
+              <Link to="/features" className="btn btn-large btn-primary">
+                View All Features
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof */}
+        <section className="social-proof section">
+          <div className="container">
+            <div className="section-header text-center">
+              <h2>Trusted by Traders Worldwide</h2>
+              <p>See what our users are saying</p>
+            </div>
+
+            <div className="testimonials-grid">
+              <div className="testimonial-card">
+                <div className="testimonial-rating">
+                  ★★★★★
+                </div>
+                <p className="testimonial-text">
+                  "TradeFlows Pro completely transformed how I trade. The AI strategies have helped me identify opportunities I would have missed, and the portfolio analytics keep me disciplined."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">JD</div>
+                  <div className="author-info">
+                    <div className="author-name">James Davidson</div>
+                    <div className="author-role">Day Trader, 5 years</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="testimonial-card">
+                <div className="testimonial-rating">
+                  ★★★★★
+                </div>
+                <p className="testimonial-text">
+                  "The real-time data and advanced charting tools rival platforms costing 10x more. Best investment I've made in my trading career. The support team is incredibly responsive too."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">SC</div>
+                  <div className="author-info">
+                    <div className="author-name">Sarah Chen</div>
+                    <div className="author-role">Swing Trader, Crypto & Stocks</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="testimonial-card">
+                <div className="testimonial-rating">
+                  ★★★★★
+                </div>
+                <p className="testimonial-text">
+                  "Finally, a platform that doesn't overwhelm beginners but still has all the advanced features pros need. The AI insights are game-changing for risk management."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">MR</div>
+                  <div className="author-info">
+                    <div className="author-name">Michael Rodriguez</div>
+                    <div className="author-role">Part-Time Trader</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="cta-section section">
+          <div className="container">
+            <div className="cta-card">
+              <div className="cta-content">
+                <h2>Ready to Transform Your Trading?</h2>
+                <p>Start your 7-day free trial. No credit card required. Cancel anytime.</p>
+                <div className="cta-actions">
+                  <a href="https://app.tradeflows.net?signup=true" className="btn btn-large btn-cta-primary">
+                    Start Free Trial
+                  </a>
+                  <Link to="/pricing" className="btn btn-large btn-cta-secondary">
+                    View Pricing
+                  </Link>
+                </div>
+                <div className="cta-features">
+                  <span>✓ Full platform access</span>
+                  <span>✓ No credit card needed</span>
+                  <span>✓ Cancel anytime</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  )
+}

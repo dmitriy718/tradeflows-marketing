@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run build:*)",
+      "Bash(bash:*)",
+      "Bash(scp:*)",
+      "Bash(ssh:*)",
+      "Bash(curl -I https://tradeflows.net)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(sed:*)",
+      "Bash(dd:*)",
+      "Read(//c/Users/dmitr/Projects/**)",
+      "Read(//c/Users/dmitr/Projects/tradeflows-pro/**)",
+      "Bash(npm run build:prod:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
