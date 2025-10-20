@@ -5,6 +5,7 @@ import './Navigation.css'
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -12,8 +13,19 @@ export default function Navigation() {
       setIsScrolled(window.scrollY > 20)
     }
 
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1024)
+    }
+
+    // Set initial state
+    handleResize()
+
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   // Close mobile menu on route change
@@ -47,13 +59,57 @@ export default function Navigation() {
           </span>
         </Link>
 
-        <div className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
-          <ul className="nav-links">
+        <div
+          className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}
+          style={isMobileMenuOpen && isMobile ? {
+            position: 'fixed',
+            top: '72px',
+            left: '0',
+            right: '0',
+            bottom: '0',
+            height: 'calc(100vh - 72px)',
+            minHeight: '500px',
+            background: 'rgba(13, 15, 20, 0.98)',
+            backdropFilter: 'blur(20px)',
+            display: 'flex',
+            flexDirection: 'column',
+            padding: '2rem',
+            gap: '2rem',
+            transform: 'translateX(0)',
+            transition: 'transform 0.3s ease',
+            overflowY: 'auto',
+            zIndex: 9999,
+            visibility: 'visible'
+          } : {}}
+        >
+          <ul className="nav-links" style={isMobileMenuOpen && isMobile ? {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            gap: '1rem',
+            alignItems: 'stretch',
+            listStyle: 'none',
+            margin: '0',
+            padding: '0'
+          } : {}}>
             {navLinks.map((link) => (
-              <li key={link.path}>
+              <li key={link.path} style={isMobileMenuOpen && isMobile ? {
+                width: '100%',
+                display: 'block',
+                listStyle: 'none'
+              } : {}}>
                 <Link
                   to={link.path}
                   className={`${location.pathname === link.path ? 'active' : ''} ${link.highlight ? 'highlight-glow' : ''}`}
+                  style={isMobileMenuOpen && isMobile ? {
+                    width: '100%',
+                    padding: '1.5rem',
+                    textAlign: 'center',
+                    fontSize: '1.125rem',
+                    display: 'block',
+                    borderRadius: '8px',
+                    transition: 'all 0.2s ease'
+                  } : {}}
                 >
                   {link.label}
                 </Link>
@@ -61,7 +117,13 @@ export default function Navigation() {
             ))}
           </ul>
 
-          <div className="nav-actions">
+          <div className="nav-actions" style={isMobileMenuOpen && isMobile ? {
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%',
+            gap: '1rem',
+            marginTop: '1.5rem'
+          } : {}}>
             <a href="https://app.tradeflows.net?utm_source=website&utm_medium=navigation&utm_campaign=signin" className="btn btn-text">
               Sign In
             </a>
