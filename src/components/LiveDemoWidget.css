@@ -1,0 +1,291 @@
+.live-demo-widget {
+  background: linear-gradient(135deg, rgba(13, 15, 20, 0.95) 0%, rgba(20, 25, 35, 0.95) 100%);
+  border: 1px solid rgba(34, 255, 121, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.demo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.demo-header h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.demo-badge {
+  background: linear-gradient(135deg, #22ff79, #14c75a);
+  color: #0a0d12;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.symbol-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.symbol-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.symbol-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(34, 255, 121, 0.3);
+  color: #ffffff;
+}
+
+.symbol-btn.active {
+  background: linear-gradient(135deg, rgba(34, 255, 121, 0.2), rgba(20, 199, 90, 0.2));
+  border-color: #22ff79;
+  color: #22ff79;
+}
+
+.price-display {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.price-display.animating {
+  transform: scale(1.02);
+}
+
+.current-price {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.price-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+.price-value {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.price-change {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.price-change.positive {
+  color: #22ff79;
+}
+
+.price-change.negative {
+  color: #ff4444;
+}
+
+.volume-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.volume-label {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+.volume-value {
+  color: #3b9eff;
+  font-weight: 600;
+}
+
+.ai-signal {
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.1), rgba(34, 255, 121, 0.1));
+  border: 1px solid rgba(59, 158, 255, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.signal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.confidence {
+  color: #3b9eff;
+  font-weight: 600;
+}
+
+.signal-display {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.signal-display.buy {
+  background: linear-gradient(135deg, rgba(34, 255, 121, 0.2), rgba(20, 199, 90, 0.1));
+  border: 1px solid #22ff79;
+}
+
+.signal-display.sell {
+  background: linear-gradient(135deg, rgba(255, 68, 68, 0.2), rgba(199, 20, 20, 0.1));
+  border: 1px solid #ff4444;
+}
+
+.signal-display.hold {
+  background: linear-gradient(135deg, rgba(255, 191, 36, 0.2), rgba(199, 150, 20, 0.1));
+  border: 1px solid #ffbf24;
+}
+
+.signal-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.confidence-bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 6px;
+  border-radius: 3px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b9eff, #22ff79);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.indicators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.indicator {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.indicator.bullish {
+  border-color: rgba(34, 255, 121, 0.3);
+  background: rgba(34, 255, 121, 0.05);
+}
+
+.indicator.bearish {
+  border-color: rgba(255, 68, 68, 0.3);
+  background: rgba(255, 68, 68, 0.05);
+}
+
+.indicator-name {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+}
+
+.indicator-value {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.demo-cta {
+  text-align: center;
+}
+
+.try-now-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #22ff79, #14c75a);
+  color: #0a0d12;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(34, 255, 121, 0.3);
+}
+
+.try-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(34, 255, 121, 0.4);
+}
+
+.demo-note {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+  .live-demo-widget {
+    padding: 1.5rem;
+  }
+
+  .symbol-selector {
+    justify-content: center;
+  }
+
+  .symbol-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.875rem;
+  }
+
+  .price-value {
+    font-size: 1.5rem;
+  }
+
+  .indicators-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,260 @@
+/* Social Proof Notification */
+.social-proof-notification {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 360px;
+  max-width: calc(100vw - 110px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9998;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.social-proof-notification.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Close Button */
+.social-proof-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.social-proof-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #64748b;
+}
+
+/* Content */
+.social-proof-content {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding-right: 24px;
+}
+
+.social-proof-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.social-proof-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.social-proof-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.social-proof-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1a202c;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.social-proof-time {
+  font-size: 11px;
+  color: #94a3b8;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.social-proof-message {
+  font-size: 13px;
+  color: #4a5568;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.social-proof-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.social-proof-location svg {
+  flex-shrink: 0;
+}
+
+/* Verified Badge */
+.social-proof-verified {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(16, 185, 129, 0.08);
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #059669;
+  align-self: flex-start;
+}
+
+.social-proof-verified svg {
+  flex-shrink: 0;
+}
+
+/* Hover Effect */
+.social-proof-notification:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .social-proof-notification {
+    bottom: 90px;
+    left: 16px;
+    width: 320px;
+    max-width: calc(100vw - 32px);
+    padding: 14px;
+  }
+
+  .social-proof-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .social-proof-name {
+    font-size: 13px;
+  }
+
+  .social-proof-message {
+    font-size: 12px;
+  }
+
+  .social-proof-location {
+    font-size: 11px;
+  }
+
+  .social-proof-verified {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .social-proof-notification {
+    width: calc(100vw - 32px);
+  }
+}
+
+/* Tablet landscape - avoid conflict with chat widget */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .social-proof-notification {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+/* Animation for notification type badge */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.social-proof-notification.visible .social-proof-icon {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .social-proof-notification {
+    background: #1e293b;
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+
+  .social-proof-notification:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .social-proof-close {
+    color: #94a3b8;
+  }
+
+  .social-proof-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #cbd5e0;
+  }
+
+  .social-proof-name {
+    color: #f1f5f9;
+  }
+
+  .social-proof-message {
+    color: #cbd5e0;
+  }
+
+  .social-proof-time,
+  .social-proof-location {
+    color: #94a3b8;
+  }
+
+  .social-proof-verified {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .social-proof-notification {
+    transition: opacity 0.3s ease;
+  }
+
+  .social-proof-notification.visible .social-proof-icon {
+    animation: none;
+  }
+}
+
+/* Print - hide notification */
+@media print {
+  .social-proof-notification {
+    display: none;
+  }
+}

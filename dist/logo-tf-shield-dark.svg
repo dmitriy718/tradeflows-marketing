@@ -1,0 +1,116 @@
+<svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Same as main logo - optimized for light backgrounds -->
+  <defs>
+    <!-- Shield gradient -->
+    <linearGradient id="shieldGradientDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Darker gold gradient for border -->
+    <linearGradient id="goldGradientDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#d97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b45309;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glowDark">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow for 3D effect -->
+    <filter id="shadowDark" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Letter emboss effect -->
+    <filter id="embossDark">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="1" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main shield shape -->
+  <g transform="translate(100, 10)">
+    <!-- Outer gold border with glow -->
+    <path d="M 100 0
+             L 180 30
+             L 195 90
+             L 195 150
+             Q 195 200, 100 230
+             Q 5 200, 5 150
+             L 5 90
+             L 20 30 Z"
+          fill="url(#goldGradientDark)"
+          filter="url(#glowDark)" />
+
+    <!-- Inner shield fill -->
+    <path d="M 100 10
+             L 170 35
+             L 183 88
+             L 183 148
+             Q 183 192, 100 218
+             Q 17 192, 17 148
+             L 17 88
+             L 30 35 Z"
+          fill="url(#shieldGradientDark)"
+          filter="url(#shadowDark)" />
+
+    <!-- TF Monogram -->
+    <g transform="translate(40, 70)" filter="url(#embossDark)">
+      <!-- Letter T -->
+      <path d="M 10 0
+               L 70 0
+               L 70 15
+               L 47 15
+               L 47 90
+               L 33 90
+               L 33 15
+               L 10 15 Z"
+            fill="#ffffff"
+            opacity="0.95" />
+
+      <!-- Letter F -->
+      <path d="M 75 0
+               L 130 0
+               L 130 15
+               L 89 15
+               L 89 35
+               L 125 35
+               L 125 50
+               L 89 50
+               L 89 90
+               L 75 90 Z"
+            fill="#ffffff"
+            opacity="0.95" />
+    </g>
+  </g>
+
+  <!-- Text: TradeFlows Pro (dark navy for light background) -->
+  <text x="200" y="270" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="700" font-size="32" fill="#0f172a" text-anchor="middle">
+    TradeFlows
+  </text>
+  <text x="320" y="265" font-family="Inter, system-ui, -apple-system, sans-serif" font-weight="400" font-size="18" fill="#6b7280" text-anchor="start">
+    PRO
+  </text>
+</svg>

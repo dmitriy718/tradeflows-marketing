@@ -1,0 +1,15 @@
+# TradeFlows Pro - Robots.txt
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tradeflows.net/sitemap.xml
+
+# Crawl delay (optional, helps prevent overwhelming the server)
+Crawl-delay: 1
+
+# Disallow sensitive paths (if any)
+Disallow: /api/
+Disallow: /*.json$

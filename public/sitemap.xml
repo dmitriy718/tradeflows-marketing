@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://tradeflows.net/</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Features -->
+  <url>
+    <loc>https://tradeflows.net/features</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Pricing -->
+  <url>
+    <loc>https://tradeflows.net/pricing</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://tradeflows.net/about</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://tradeflows.net/contact</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog -->
+  <url>
+    <loc>https://tradeflows.net/blog</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Knowledge Base -->
+  <url>
+    <loc>https://tradeflows.net/knowledge-base</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Comparison -->
+  <url>
+    <loc>https://tradeflows.net/comparison</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Careers -->
+  <url>
+    <loc>https://tradeflows.net/careers</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Press Kit -->
+  <url>
+    <loc>https://tradeflows.net/press</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://tradeflows.net/privacy</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://tradeflows.net/terms</loc>
+    <lastmod>2025-10-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

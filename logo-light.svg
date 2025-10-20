@@ -1,0 +1,24 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Light background version -->
+  <rect width="400" height="120" fill="#f8fafc"/>
+
+  <!-- Icon: Stylized TF with flow arrows -->
+  <g transform="translate(20, 20)">
+    <!-- Outer circle -->
+    <circle cx="40" cy="40" r="35" fill="none" stroke="#0ea5e9" stroke-width="3"/>
+
+    <!-- Flow arrows -->
+    <path d="M 25 25 L 55 25 L 50 20" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M 55 55 L 25 55 L 30 60" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- TF letters -->
+    <text x="40" y="48" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">TF</text>
+  </g>
+
+  <!-- Text -->
+  <text x="110" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#1e293b">TradeFlows</text>
+  <text x="110" y="78" font-family="Arial, sans-serif" font-size="20" font-weight="600" fill="#0ea5e9">Pro</text>
+
+  <!-- Tagline -->
+  <text x="110" y="100" font-family="Arial, sans-serif" font-size="12" fill="#64748b">Advanced Trading Platform</text>
+</svg>

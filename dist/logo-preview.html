@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TradeFlows Pro - Logo Preview Options</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: #f8fafc;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e293b;
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 50px;
+      font-size: 1.1rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .option-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .option-header {
+      margin-bottom: 20px;
+    }
+
+    .option-number {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .option-title {
+      font-size: 1.5rem;
+      color: #1e293b;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .option-style {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    .logo-display {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 160px;
+      border: 2px solid #e2e8f0;
+    }
+
+    .logo-display.dark {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .logo-display.blue {
+      background: #3b82f6;
+      border-color: #2563eb;
+    }
+
+    .logo-display img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .background-label {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: -10px;
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .features {
+      margin-top: 20px;
+      padding: 20px;
+      background: #f8fafc;
+      border-radius: 8px;
+    }
+
+    .features h4 {
+      color: #475569;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .features li {
+      color: #64748b;
+      font-size: 0.9rem;
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .features li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #10b981;
+      font-weight: bold;
+    }
+
+    .comparison-section {
+      background: white;
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 60px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .comparison-section h2 {
+      color: #1e293b;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .side-by-side {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .side-by-side img {
+      max-width: 380px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      background: white;
+    }
+
+    .instructions {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+
+    .instructions h3 {
+      color: #1e40af;
+      margin-bottom: 10px;
+    }
+
+    .instructions p {
+      color: #475569;
+      margin-bottom: 10px;
+    }
+
+    .instructions code {
+      background: #dbeafe;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #1e40af;
+    }
+
+    @media (max-width: 768px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .side-by-side img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 TradeFlows Pro - Logo Options</h1>
+    <p class="subtitle">Choose your favorite design • All shown at actual size (400x120px)</p>
+
+    <div class="options-grid">
+      <!-- Option 1 -->
+      <div class="option-card">
+        <div class="option-header">
+          <span class="option-number">OPTION 1</span>
+          <h2 class="option-title">Flow Wave</h2>
+          <p class="option-style">Modern & Dynamic</p>
+        </div>
+
+        <div class="logo-display">
+          <img src="/preview-logo-option1-flow-wave.svg" alt="Option 1 - Flow Wave">
+        </div>
+        <p class="background-label">On White Background</p>
+
+        <div class="logo-display dark">
+          <img src="/preview-logo-option1-flow-wave.svg" alt="Option 1 - Flow Wave">
+        </div>
+        <p class="background-label">On Dark Background</p>
+
+        <div class="features">
+          <h4>Design Features:</h4>
+          <ul>
+            <li>Flowing wave curves form abstract TF</li>
+            <li>Blue-to-cyan gradient (#3b82f6 → #06b6d4)</li>
+            <li>Modern tech startup vibe</li>
+            <li>Represents market flow & movement</li>
+            <li>Clean sans-serif typography</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Option 2 -->
+      <div class="option-card">
+        <div class="option-header">
+          <span class="option-number">OPTION 2</span>
+          <h2 class="option-title">Chart Arrow</h2>
+          <p class="option-style">Financial & Professional</p>
+        </div>
+
+        <div class="logo-display">
+          <img src="/preview-logo-option2-chart-arrow.svg" alt="Option 2 - Chart Arrow">
+        </div>
+        <p class="background-label">On White Background</p>
+
+        <div class="logo-display dark">
+          <img src="/preview-logo-option2-chart-arrow.svg" alt="Option 2 - Chart Arrow">
+        </div>
+        <p class="background-label">On Dark Background</p>
+
+        <div class="features">
+          <h4>Design Features:</h4>
+          <ul>
+            <li>Ascending candlestick chart bars</li>
+            <li>Navy-to-green gradient (#0f172a → #10b981)</li>
+            <li>Professional financial services feel</li>
+            <li>Upward arrow = growth & success</li>
+            <li>Serif font for trustworthiness</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Option 3 -->
+      <div class="option-card">
+        <div class="option-header">
+          <span class="option-number">OPTION 3</span>
+          <h2 class="option-title">Geometric TF</h2>
+          <p class="option-style">Bold & Minimal</p>
+        </div>
+
+        <div class="logo-display">
+          <img src="/preview-logo-option3-geometric-tf.svg" alt="Option 3 - Geometric TF">
+        </div>
+        <p class="background-label">On White Background</p>
+
+        <div class="logo-display dark">
+          <img src="/preview-logo-option3-geometric-tf.svg" alt="Option 3 - Geometric TF">
+        </div>
+        <p class="background-label">On Dark Background</p>
+
+        <div class="features">
+          <h4>Design Features:</h4>
+          <ul>
+            <li>Bold geometric TF lettermark</li>
+            <li>Purple-to-pink gradient (#8b5cf6 → #ec4899)</li>
+            <li>Minimalist modern design</li>
+            <li>Perfect for app icons & mobile</li>
+            <li>High brand recognition</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="comparison-section">
+      <h2>📊 Side-by-Side Comparison</h2>
+      <div class="side-by-side">
+        <div>
+          <img src="/preview-logo-option1-flow-wave.svg" alt="Option 1">
+          <p style="text-align: center; margin-top: 10px; color: #64748b;">Option 1: Flow Wave</p>
+        </div>
+        <div>
+          <img src="/preview-logo-option2-chart-arrow.svg" alt="Option 2">
+          <p style="text-align: center; margin-top: 10px; color: #64748b;">Option 2: Chart Arrow</p>
+        </div>
+        <div>
+          <img src="/preview-logo-option3-geometric-tf.svg" alt="Option 3">
+          <p style="text-align: center; margin-top: 10px; color: #64748b;">Option 3: Geometric TF</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="instructions">
+      <h3>📝 Next Steps</h3>
+      <p><strong>Choose your favorite option (1, 2, or 3)</strong> and let me know!</p>
+      <p>Once you select, I will:</p>
+      <ul style="margin-left: 20px; margin-top: 10px;">
+        <li>Create full logo set (light, dark, icon, favicon variants)</li>
+        <li>Update Navigation and Footer components</li>
+        <li>Update favicon in index.html</li>
+        <li>Build and test the changes</li>
+        <li>Clean up these preview files</li>
+      </ul>
+      <p style="margin-top: 15px;"><strong>Reply with:</strong> <code>"I choose option 1"</code>, <code>"I choose option 2"</code>, or <code>"I choose option 3"</code></p>
+    </div>
+  </div>
+</body>
+</html>

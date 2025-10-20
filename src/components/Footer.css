@@ -25,9 +25,16 @@
 }
 
 .footer-logo img {
-  height: 36px;
+  height: 52px;
   width: auto;
+  max-width: 280px;
+  object-fit: contain;
   margin-bottom: var(--spacing-md);
+  transition: all var(--transition-fast);
+}
+
+.footer-logo img:hover {
+  filter: drop-shadow(0 0 8px rgba(59, 158, 255, 0.3));
 }
 
 .footer-description {
@@ -136,6 +143,11 @@
 @media (max-width: 768px) {
   .footer-container {
     padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-lg);
+  }
+
+  .footer-logo img {
+    height: 42px;
+    max-width: 220px;
   }
 
   .footer-grid {

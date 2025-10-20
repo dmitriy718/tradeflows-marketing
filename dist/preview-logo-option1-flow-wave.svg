@@ -1,0 +1,53 @@
+<svg width="400" height="120" viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Option 1: Flow Wave - Modern & Dynamic -->
+
+  <defs>
+    <linearGradient id="waveGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Flowing wave pattern forming abstract TF -->
+  <g transform="translate(10, 20)">
+    <!-- Wave 1 - Top flow (forms T top) -->
+    <path d="M 10 15 Q 25 10, 40 15 T 70 15"
+          fill="none"
+          stroke="#3b82f6"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <!-- Wave 2 - Middle flow -->
+    <path d="M 15 35 Q 30 28, 45 35 Q 55 40, 65 35"
+          fill="none"
+          stroke="#0ea5e9"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <!-- Wave 3 - Bottom flow (forms F shape) -->
+    <path d="M 10 55 Q 25 50, 40 55 T 70 55"
+          fill="none"
+          stroke="#06b6d4"
+          stroke-width="6"
+          stroke-linecap="round"/>
+
+    <!-- Vertical flow line connecting waves -->
+    <path d="M 12 15 L 12 55"
+          fill="none"
+          stroke="#3b82f6"
+          stroke-width="5"
+          stroke-linecap="round"/>
+
+    <!-- Accent dots for flow direction -->
+    <circle cx="72" cy="15" r="3" fill="#3b82f6"/>
+    <circle cx="67" cy="35" r="3" fill="#0ea5e9"/>
+    <circle cx="72" cy="55" r="3" fill="#06b6d4"/>
+  </g>
+
+  <!-- Text -->
+  <text x="110" y="52" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#1e293b">TradeFlows</text>
+  <text x="110" y="74" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#3b82f6">PRO</text>
+
+  <!-- Subtle tagline -->
+  <text x="110" y="92" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#94a3b8">Dynamic Trading Platform</text>
+</svg>

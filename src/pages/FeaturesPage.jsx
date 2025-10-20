@@ -17,7 +17,7 @@ export default function FeaturesPage() {
             <div className="features-hero-content">
               <h1>Everything You Need to <span className="gradient-text">Trade Like a Pro</span></h1>
               <p>Comprehensive suite of professional trading tools, AI-powered insights, and real-time market data all in one powerful platform.</p>
-              <a href="https://app.tradeflows.net?signup=true" className="btn btn-primary btn-large">
+              <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-primary btn-large">
                 Start Free Trial
               </a>
             </div>
@@ -370,7 +370,7 @@ export default function FeaturesPage() {
               <h2>Ready to Experience TradeFlows Pro?</h2>
               <p>Start your 7-day free trial and see why thousands of traders trust TradeFlows</p>
               <div className="cta-actions">
-                <a href="https://app.tradeflows.net?signup=true" className="btn btn-primary btn-large">
+                <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-primary btn-large">
                   Start Free Trial
                 </a>
                 <Link to="/pricing" className="btn btn-secondary btn-large">

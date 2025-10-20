@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="footer-section">
             <div className="footer-logo">
-              <img src="/logo-full.svg" alt="TradeFlows Professional" />
+              <img src="/logo-light.svg" alt="TradeFlows Pro" style={{ height: '45px', width: 'auto' }} />
             </div>
             <p className="footer-description">
               Professional trading platform powered by AI. Make smarter trading decisions with real-time data, advanced analytics, and intelligent strategy recommendations.
@@ -55,8 +55,8 @@ export default function Footer() {
               <li><Link to="/about">About Us</Link></li>
               <li><Link to="/careers">Careers</Link></li>
               <li><Link to="/contact">Contact</Link></li>
-              <li><a href="/press-kit.zip">Press Kit</a></li>
-              <li><a href="https://status.tradeflows.net" target="_blank" rel="noopener noreferrer">System Status</a></li>
+              <li><Link to="/press-kit">Press Kit</Link></li>
+              <li><Link to="/knowledge-base">System Status</Link></li>
             </ul>
           </div>
 
@@ -64,10 +64,10 @@ export default function Footer() {
           <div className="footer-section">
             <h4 className="footer-title">Resources</h4>
             <ul className="footer-links">
-              <li><Link to="/knowledge-base/getting-started">Getting Started</Link></li>
+              <li><Link to="/knowledge-base/quick-start-guide">Getting Started</Link></li>
               <li><Link to="/knowledge-base/api-documentation">API Docs</Link></li>
-              <li><a href="https://community.tradeflows.net" target="_blank" rel="noopener noreferrer">Community</a></li>
-              <li><a href="https://support.tradeflows.net" target="_blank" rel="noopener noreferrer">Support Center</a></li>
+              <li><Link to="/blog">Community & Blog</Link></li>
+              <li><Link to="/contact">Support Center</Link></li>
               <li><Link to="/knowledge-base/security">Security</Link></li>
             </ul>
           </div>

@@ -1,14 +1,49 @@
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
+import SEO from '../components/SEO'
 import './HomePage.css'
 
 export default function HomePage() {
+  // Structured data for the homepage
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'TradeFlows Pro',
+    applicationCategory: 'FinanceApplication',
+    operatingSystem: 'Web, iOS, Android',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+      priceValidUntil: '2026-12-31',
+      description: '7-day free trial, then starting at $19.99/month'
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      ratingCount: '50000',
+      bestRating: '5',
+      worstRating: '1'
+    },
+    description: 'Professional AI-powered trading platform with real-time market data, intelligent strategy recommendations, and advanced portfolio analytics for stocks, crypto, forex, and commodities.',
+    features: [
+      'Real-time market data',
+      'AI-powered trading strategies',
+      'Advanced portfolio management',
+      'Smart alerts and notifications',
+      '100+ technical indicators',
+      'Performance analytics'
+    ]
+  }
+
   return (
     <>
-      <Helmet>
-        <title>TradeFlows Pro - AI-Powered Professional Trading Platform</title>
-        <meta name="description" content="Transform your trading with AI-powered strategies, real-time market data, and advanced portfolio analytics. Start your 7-day free trial today." />
-      </Helmet>
+      <SEO
+        title="TradeFlows Pro - AI-Powered Professional Trading Platform"
+        description="Transform your trading with AI-powered strategies, real-time market data, and advanced portfolio analytics. Trade stocks, crypto, forex, and commodities with confidence. Start your 7-day free trial today."
+        keywords="trading platform, stock trading, crypto trading, AI trading, portfolio management, market analysis, day trading, algorithmic trading, trading software, stock market app"
+        canonical="/"
+        structuredData={structuredData}
+      />
 
       <div className="home-page">
         {/* Hero Section */}
@@ -33,7 +68,7 @@ export default function HomePage() {
                 TradeFlows Pro combines real-time market data, intelligent strategy recommendations, and advanced portfolio analytics to help you make confident trading decisions. Join thousands of traders who've transformed their approach.
               </p>
               <div className="hero-actions">
-                <a href="https://app.tradeflows.net?signup=true" className="btn btn-hero-primary">
+                <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-hero-primary">
                   Start Free 7-Day Trial
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7 10h6m0 0L10 7m3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -218,6 +253,39 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Comparison Callout */}
+        <section className="comparison-callout section">
+          <div className="container">
+            <div className="comparison-box">
+              <div className="comparison-badge">Why Choose Us?</div>
+              <h2>See How We Compare to LuxAlgo</h2>
+              <p>
+                Discover why 50,000+ traders chose TradeFlows Pro over LuxAlgo.
+                Compare features, pricing, and value side-by-side.
+              </p>
+              <div className="comparison-stats">
+                <div className="stat-item">
+                  <div className="stat-number">17</div>
+                  <div className="stat-text">Key Features Won</div>
+                </div>
+                <div className="stat-divider"></div>
+                <div className="stat-item">
+                  <div className="stat-number">Better Value</div>
+                  <div className="stat-text">More Features, Lower Total Cost</div>
+                </div>
+                <div className="stat-divider"></div>
+                <div className="stat-item">
+                  <div className="stat-number">Standalone</div>
+                  <div className="stat-text">No Additional Subscriptions</div>
+                </div>
+              </div>
+              <Link to="/vs-luxalgo" className="btn btn-large btn-gradient">
+                View Full Comparison
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Social Proof */}
         <section className="social-proof section">
           <div className="container">
@@ -286,7 +354,7 @@ export default function HomePage() {
                 <h2>Ready to Transform Your Trading?</h2>
                 <p>Start your 7-day free trial. No credit card required. Cancel anytime.</p>
                 <div className="cta-actions">
-                  <a href="https://app.tradeflows.net?signup=true" className="btn btn-large btn-cta-primary">
+                  <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-large btn-cta-primary">
                     Start Free Trial
                   </a>
                   <Link to="/pricing" className="btn btn-large btn-cta-secondary">

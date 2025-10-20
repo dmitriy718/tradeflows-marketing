@@ -1,0 +1,108 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon-only version - no text, square format -->
+  <defs>
+    <!-- Shield gradient -->
+    <linearGradient id="shieldGradientIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3c72;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Gold gradient for border -->
+    <linearGradient id="goldGradientIcon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow effect -->
+    <filter id="glowIcon">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow for 3D effect -->
+    <filter id="shadowIcon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="0" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Letter emboss effect -->
+    <filter id="embossIcon">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5"/>
+      <feOffset dx="1" dy="1" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.6"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Main shield shape - centered and scaled to fit square -->
+  <g transform="translate(0, -15) scale(1.0)">
+    <!-- Outer gold border with glow -->
+    <path d="M 100 5
+             L 180 35
+             L 195 95
+             L 195 155
+             Q 195 200, 100 227
+             Q 5 200, 5 155
+             L 5 95
+             L 20 35 Z"
+          fill="url(#goldGradientIcon)"
+          filter="url(#glowIcon)" />
+
+    <!-- Inner shield fill -->
+    <path d="M 100 15
+             L 170 40
+             L 183 93
+             L 183 153
+             Q 183 192, 100 215
+             Q 17 192, 17 153
+             L 17 93
+             L 30 40 Z"
+          fill="url(#shieldGradientIcon)"
+          filter="url(#shadowIcon)" />
+
+    <!-- TF Monogram - larger for icon-only version -->
+    <g transform="translate(45, 75)" filter="url(#embossIcon)">
+      <!-- Letter T -->
+      <path d="M 5 0
+               L 60 0
+               L 60 14
+               L 38 14
+               L 38 85
+               L 27 85
+               L 27 14
+               L 5 14 Z"
+            fill="#ffffff"
+            opacity="0.98" />
+
+      <!-- Letter F -->
+      <path d="M 65 0
+               L 115 0
+               L 115 14
+               L 76 14
+               L 76 32
+               L 110 32
+               L 110 46
+               L 76 46
+               L 76 85
+               L 65 85 Z"
+            fill="#ffffff"
+            opacity="0.98" />
+    </g>
+  </g>
+</svg>

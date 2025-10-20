@@ -1438,6 +1438,871 @@ Planned portfolio features:
     `
   },
 
+  // Technical Analysis
+  {
+    id: 'advanced-charting',
+    category: 'technical-analysis',
+    title: 'Advanced Charting Tools',
+    description: 'Master professional charting and technical analysis tools',
+    readTime: '15 min read',
+    lastUpdated: '2024-01-10',
+    content: `
+# Advanced Charting Tools
+
+TradeFlows Pro provides professional-grade charting with 100+ technical indicators, drawing tools, and custom analysis features.
+
+## Chart Types
+
+### Candlestick Charts
+- Japanese candlesticks (default)
+- Heikin-Ashi (smoothed candles)
+- Hollow candles
+- Color schemes and customization
+
+### Bar Charts
+- OHLC bars
+- HLC bars (no open)
+- Colored by direction
+
+### Line & Area Charts
+- Simple line charts
+- Weighted close
+- Typical price
+- Area fills with gradients
+
+### Advanced Chart Types
+- Renko (brick charts)
+- Point & Figure
+- Kagi charts
+- Three Line Break
+- Range bars
+- Tick charts
+
+## Technical Indicators
+
+### Trend Indicators
+- Moving Averages (SMA, EMA, WMA, VWMA)
+- MACD (Moving Average Convergence Divergence)
+- Parabolic SAR
+- Ichimoku Cloud
+- ADX (Average Directional Index)
+
+### Momentum Indicators
+- RSI (Relative Strength Index)
+- Stochastic Oscillator
+- Williams %R
+- CCI (Commodity Channel Index)
+- ROC (Rate of Change)
+
+### Volatility Indicators
+- Bollinger Bands
+- ATR (Average True Range)
+- Keltner Channels
+- Donchian Channels
+- Standard Deviation
+
+### Volume Indicators
+- Volume bars
+- OBV (On-Balance Volume)
+- Volume-Weighted Average Price (VWAP)
+- Accumulation/Distribution
+- Money Flow Index
+
+### Custom Indicators
+Professional plan includes:
+- Indicator builder
+- Custom formulas
+- Pine Script compatibility
+- Save and share indicators
+
+## Drawing Tools
+
+### Lines & Shapes
+- Trend lines
+- Horizontal/vertical lines
+- Parallel channels
+- Fibonacci retracements
+- Fibonacci extensions
+- Fibonacci fans
+- Gann angles
+- Rectangles, circles, triangles
+
+### Pattern Recognition
+AI-powered automatic detection:
+- Head and shoulders
+- Double tops/bottoms
+- Triangles (ascending, descending, symmetrical)
+- Flags and pennants
+- Cup and handle
+- Wedges
+
+## Timeframes & Analysis
+
+### Available Timeframes
+- Tick charts (every trade)
+- 1, 5, 15, 30 seconds
+- 1, 5, 15, 30 minutes
+- 1, 2, 4 hours
+- Daily, weekly, monthly
+- Custom timeframes (Professional)
+
+### Multi-Timeframe Analysis
+- Compare up to 6 timeframes
+- Synchronized scrolling
+- Timeframe alignment
+- Higher timeframe overlays
+
+## Chart Features
+
+### Alerts
+- Price alerts
+- Indicator crossover alerts
+- Drawing tool alerts
+- Custom conditions
+
+### Analysis Tools
+- Measure tool
+- Cross-hair with data
+- Zoom and pan
+- Screenshot export
+- Video recording (Professional)
+
+## Mobile Charting
+
+Full charting on iOS/Android:
+- All chart types
+- Core indicators
+- Drawing tools
+- Touch gestures
+- Sync with desktop
+
+## Coming Soon
+- Options chains visualization
+- Level 2 market depth overlay
+- Order flow analysis
+- Volume profile
+    `
+  },
+  {
+    id: 'api-documentation',
+    category: 'technical-analysis',
+    title: 'API Documentation',
+    description: 'Complete guide to TradeFlows Pro REST API and WebSocket connections',
+    readTime: '20 min read',
+    lastUpdated: '2024-01-09',
+    content: `
+# API Documentation
+
+TradeFlows Pro provides a comprehensive REST API and WebSocket connections for programmatic access to market data, portfolio management, and trading features.
+
+## Getting Started
+
+### API Access
+- Available on Professional plan only
+- 10,000 requests per day
+- Rate limit: 100 requests per minute
+- WebSocket connections: up to 5 concurrent
+
+### Authentication
+
+**API Key Generation:**
+1. Go to Settings > API Keys
+2. Click "Generate New API Key"
+3. Name your key (e.g., "Python Trading Bot")
+4. Set permissions (read-only or read-write)
+5. Copy and securely store your key
+6. Never share your API key
+
+**Authentication Header:**
+\`\`\`
+Authorization: Bearer YOUR_API_KEY
+\`\`\`
+
+### Base URL
+\`\`\`
+https://api.tradeflows.net/v1
+\`\`\`
+
+## REST API Endpoints
+
+### Market Data
+
+**GET /quotes/{symbol}**
+Get real-time quote for a symbol
+
+Request:
+\`\`\`bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \\
+  https://api.tradeflows.net/v1/quotes/AAPL
+\`\`\`
+
+Response:
+\`\`\`json
+{
+  "symbol": "AAPL",
+  "price": 175.43,
+  "change": 2.15,
+  "changePercent": 1.24,
+  "volume": 54320000,
+  "bid": 175.42,
+  "ask": 175.44,
+  "timestamp": "2024-01-15T14:30:00Z"
+}
+\`\`\`
+
+**GET /bars/{symbol}**
+Get historical OHLCV data
+
+Parameters:
+- timeframe: 1m, 5m, 15m, 1h, 1d
+- start: ISO 8601 date
+- end: ISO 8601 date
+- limit: max 10000
+
+Request:
+\`\`\`bash
+curl -H "Authorization: Bearer YOUR_API_KEY" \\
+  "https://api.tradeflows.net/v1/bars/AAPL?timeframe=1d&limit=100"
+\`\`\`
+
+**GET /symbols/search**
+Search for symbols
+
+Parameters:
+- q: search query
+- asset_class: stocks, crypto, forex, commodities
+
+### Portfolio
+
+**GET /portfolio**
+Get all portfolio positions
+
+Response:
+\`\`\`json
+{
+  "positions": [
+    {
+      "symbol": "AAPL",
+      "quantity": 100,
+      "avg_entry": 150.00,
+      "current_price": 175.43,
+      "unrealized_pnl": 2543.00,
+      "unrealized_pnl_pct": 16.95
+    }
+  ],
+  "total_value": 87650.00,
+  "cash": 12350.00
+}
+\`\`\`
+
+**POST /portfolio/positions**
+Add a new position
+
+**DELETE /portfolio/positions/{symbol}**
+Remove a position
+
+### AI Recommendations
+
+**GET /ai/recommendations**
+Get current AI trade recommendations
+
+Parameters:
+- confidence_min: 60-95
+- asset_class: filter by asset class
+- limit: max 50
+
+Response:
+\`\`\`json
+{
+  "recommendations": [
+    {
+      "symbol": "AAPL",
+      "direction": "long",
+      "entry_price": 175.50,
+      "target_price": 185.00,
+      "stop_loss": 172.00,
+      "confidence": 78,
+      "reasoning": "Bullish engulfing pattern..."
+    }
+  ]
+}
+\`\`\`
+
+### Alerts
+
+**GET /alerts**
+List all alerts
+
+**POST /alerts**
+Create new alert
+
+Request body:
+\`\`\`json
+{
+  "symbol": "AAPL",
+  "condition": "price_above",
+  "value": 180.00,
+  "notification": ["email", "sms"]
+}
+\`\`\`
+
+## WebSocket API
+
+### Connection
+
+Connect to: \`wss://ws.tradeflows.net/v1\`
+
+**Authentication:**
+\`\`\`json
+{
+  "action": "auth",
+  "key": "YOUR_API_KEY"
+}
+\`\`\`
+
+### Subscribe to Quotes
+
+\`\`\`json
+{
+  "action": "subscribe",
+  "quotes": ["AAPL", "MSFT", "GOOGL"]
+}
+\`\`\`
+
+**Quote Updates:**
+\`\`\`json
+{
+  "type": "quote",
+  "symbol": "AAPL",
+  "price": 175.43,
+  "timestamp": "2024-01-15T14:30:00Z"
+}
+\`\`\`
+
+### Subscribe to Bars
+
+\`\`\`json
+{
+  "action": "subscribe",
+  "bars": {
+    "AAPL": "1m",
+    "MSFT": "5m"
+  }
+}
+\`\`\`
+
+## Rate Limits
+
+- REST API: 100 requests/minute
+- Daily limit: 10,000 requests
+- WebSocket: 5 concurrent connections
+- Messages: 1000/minute per connection
+
+**Rate Limit Headers:**
+\`\`\`
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 95
+X-RateLimit-Reset: 1642251600
+\`\`\`
+
+## Error Handling
+
+**Error Response:**
+\`\`\`json
+{
+  "error": {
+    "code": "INVALID_SYMBOL",
+    "message": "Symbol not found",
+    "status": 404
+  }
+}
+\`\`\`
+
+**Common Error Codes:**
+- 400: Bad Request
+- 401: Unauthorized
+- 403: Forbidden
+- 404: Not Found
+- 429: Rate Limit Exceeded
+- 500: Internal Server Error
+
+## Client Libraries
+
+### Python
+\`\`\`python
+pip install tradeflows-sdk
+
+from tradeflows import TradeFlows
+
+tf = TradeFlows(api_key='YOUR_API_KEY')
+quote = tf.get_quote('AAPL')
+print(quote.price)
+\`\`\`
+
+### JavaScript/Node.js
+\`\`\`bash
+npm install tradeflows-js
+
+const TradeFlows = require('tradeflows-js');
+const tf = new TradeFlows('YOUR_API_KEY');
+const quote = await tf.getQuote('AAPL');
+\`\`\`
+
+### Java
+\`\`\`xml
+<dependency>
+  <groupId>net.tradeflows</groupId>
+  <artifactId>tradeflows-sdk</artifactId>
+  <version>1.0.0</version>
+</dependency>
+\`\`\`
+
+## Best Practices
+
+### Security
+- Never commit API keys to git
+- Use environment variables
+- Rotate keys regularly
+- Use read-only keys when possible
+- Monitor API usage
+
+### Performance
+- Cache responses when appropriate
+- Use WebSocket for real-time data
+- Batch requests when possible
+- Implement exponential backoff
+- Handle rate limits gracefully
+
+### Error Handling
+- Retry on 5xx errors
+- Back off on 429 (rate limit)
+- Log all errors
+- Monitor API health
+
+## Support
+
+API questions?
+- Documentation: https://docs.tradeflows.net/api
+- GitHub: https://github.com/tradeflows/api-examples
+- Support: api-support@tradeflows.net
+- Status: https://status.tradeflows.net
+    `
+  },
+  {
+    id: 'security',
+    category: 'account',
+    title: 'Security & Data Protection',
+    description: 'How we protect your data and keep your account secure',
+    readTime: '10 min read',
+    lastUpdated: '2024-01-08',
+    content: `
+# Security & Data Protection
+
+TradeFlows Pro takes security seriously. Learn how we protect your account and data.
+
+## Account Security
+
+### Password Requirements
+
+**Strong Passwords:**
+- Minimum 12 characters
+- Uppercase and lowercase letters
+- Numbers and special characters
+- No common words or patterns
+- Not previously compromised
+
+**Password Management:**
+- Change password regularly
+- Use a password manager
+- Never reuse passwords
+- Don't share your password
+
+### Two-Factor Authentication (2FA)
+
+**Setup 2FA:**
+1. Settings > Security > Two-Factor Authentication
+2. Choose method: SMS or Authenticator App
+3. Scan QR code with authenticator
+4. Enter verification code
+5. Save backup codes
+
+**Supported Authenticators:**
+- Google Authenticator
+- Authy
+- Microsoft Authenticator
+- 1Password
+
+**Backup Codes:**
+- 10 single-use codes
+- Store securely offline
+- Regenerate if compromised
+
+### Login Security
+
+**Features:**
+- Login notifications
+- Device tracking
+- Location monitoring
+- Suspicious activity alerts
+- Session management
+- Auto-logout after inactivity
+
+**Trusted Devices:**
+- Mark devices as trusted
+- Skip 2FA on trusted devices
+- Manage from Settings > Devices
+- Revoke access anytime
+
+## Data Encryption
+
+### In Transit
+
+**SSL/TLS Encryption:**
+- 256-bit SSL certificates
+- TLS 1.3 protocol
+- Perfect Forward Secrecy
+- HTTP Strict Transport Security (HSTS)
+
+**All Communications Encrypted:**
+- Website traffic
+- Mobile app data
+- API requests
+- WebSocket connections
+
+### At Rest
+
+**Database Encryption:**
+- AES-256 encryption
+- Encrypted backups
+- Encrypted file storage
+- Key rotation every 90 days
+
+**Sensitive Data:**
+- Payment information tokenized
+- Passwords hashed (bcrypt)
+- API keys encrypted
+- Personal data encrypted
+
+## Payment Security
+
+### PCI DSS Compliance
+
+TradeFlows Pro is PCI DSS Level 1 compliant:
+- We never store full card numbers
+- Payments processed by Stripe
+- Tokenized payment methods
+- 3D Secure authentication
+- Fraud detection systems
+
+### Secure Checkout
+
+**Features:**
+- SSL-secured checkout
+- Fraud monitoring
+- Suspicious transaction blocking
+- Chargeback protection
+- Refund policies
+
+## Data Privacy
+
+### GDPR Compliance
+
+Your rights under GDPR:
+- Right to access your data
+- Right to data portability
+- Right to deletion
+- Right to rectification
+- Right to restrict processing
+
+**Exercising Your Rights:**
+- Settings > Privacy > Data Requests
+- Export all your data (JSON/CSV)
+- Request account deletion
+- Response within 30 days
+
+### Data Collection
+
+**What We Collect:**
+- Account information (email, name)
+- Trading activity (for platform features)
+- Usage analytics (anonymized)
+- Device information
+- Location data (IP-based)
+
+**What We Don't Collect:**
+- Social Security Numbers
+- Bank account numbers
+- Passwords (we store hashes only)
+- Private messages content
+
+### Data Sharing
+
+**We Never:**
+- Sell your data
+- Share with third-party marketers
+- Disclose without consent
+
+**We May Share With:**
+- Payment processors (Stripe)
+- Cloud infrastructure (AWS)
+- Analytics services (anonymized data)
+- Law enforcement (if legally required)
+
+## Infrastructure Security
+
+### Cloud Security
+
+**AWS Infrastructure:**
+- SOC 2 Type II certified
+- ISO 27001 compliant
+- Regular security audits
+- DDoS protection
+- Redundant systems
+
+**Data Centers:**
+- Geographic redundancy
+- 99.99% uptime SLA
+- Real-time monitoring
+- Disaster recovery plans
+
+### Application Security
+
+**Security Measures:**
+- Web Application Firewall (WAF)
+- SQL injection protection
+- XSS prevention
+- CSRF protection
+- Rate limiting
+- Input validation
+
+**Security Testing:**
+- Quarterly penetration testing
+- Automated vulnerability scanning
+- Code security reviews
+- Bug bounty program
+
+## Compliance & Certifications
+
+### Industry Standards
+
+**Certifications:**
+- SOC 2 Type II
+- ISO 27001
+- PCI DSS Level 1
+- GDPR compliant
+- CCPA compliant
+
+**Financial Regulations:**
+- SEC compliance
+- FINRA regulations
+- FinCEN reporting
+- KYC/AML procedures
+
+## Incident Response
+
+### Monitoring
+
+**24/7 Security Monitoring:**
+- Intrusion detection systems
+- Anomaly detection
+- Log analysis
+- Threat intelligence
+- Security operations center (SOC)
+
+### Breach Protocol
+
+**In Case of Security Incident:**
+1. Immediate investigation
+2. Contain and remediate
+3. Notify affected users within 72 hours
+4. Report to authorities if required
+5. Post-incident analysis
+6. Implement preventive measures
+
+**User Notifications:**
+- Email notifications
+- In-app alerts
+- Website banner
+- Status page updates
+
+## User Responsibilities
+
+### Best Practices
+
+**Protect Your Account:**
+- Use strong, unique passwords
+- Enable two-factor authentication
+- Don't share credentials
+- Log out of shared devices
+- Keep software updated
+- Beware of phishing
+
+### Recognizing Threats
+
+**Phishing Awareness:**
+- We never ask for passwords via email
+- Check sender email addresses
+- Don't click suspicious links
+- Verify URLs before entering data
+- Report phishing to security@tradeflows.net
+
+**Common Scams:**
+- Fake support calls
+- Phishing emails
+- Social engineering
+- Account takeover attempts
+- Investment scams using our name
+
+### Reporting Security Issues
+
+**Found a vulnerability?**
+- Email: security@tradeflows.net
+- Bug bounty program: up to $10,000
+- Responsible disclosure policy
+- Safe harbor provisions
+
+**What to Report:**
+- Security vulnerabilities
+- Suspicious activity
+- Phishing attempts
+- Unauthorized access
+- Data breaches
+
+## Data Backups
+
+### Backup Policy
+
+**Automated Backups:**
+- Daily full backups
+- Hourly incremental backups
+- 90-day retention
+- Geographic redundancy
+- Encrypted backups
+
+**Your Data:**
+- Export anytime
+- Multiple formats (JSON, CSV, Excel)
+- Complete data portability
+- No vendor lock-in
+
+## Mobile App Security
+
+### App Security Features
+
+**iOS & Android:**
+- Biometric authentication (Face ID, Touch ID)
+- App PIN code
+- Auto-lock after inactivity
+- Secure storage
+- Certificate pinning
+- Jailbreak/root detection
+
+**Permissions:**
+- Camera (for ID verification only)
+- Notifications (for alerts)
+- Biometrics (for quick login)
+- No unnecessary permissions
+
+## API Security
+
+### API Key Management
+
+**Best Practices:**
+- Never commit keys to git
+- Use environment variables
+- Rotate keys regularly
+- Set appropriate permissions
+- Monitor usage
+- Revoke unused keys
+
+**Key Permissions:**
+- Read-only: View data only
+- Read-write: Manage portfolio
+- Admin: Full access (not recommended)
+
+### API Rate Limiting
+
+**Protection Measures:**
+- Rate limits per key
+- DDoS protection
+- Anomaly detection
+- Automatic key suspension if compromised
+
+## Privacy Settings
+
+### Account Privacy
+
+**Customize Your Privacy:**
+- Marketing communications opt-in/out
+- Data sharing preferences
+- Profile visibility (if community features enabled)
+- Analytics tracking opt-out
+- Cookie preferences
+
+**Cookie Policy:**
+- Essential cookies (required)
+- Analytics cookies (optional)
+- Advertising cookies (none)
+- Manage in Settings > Privacy
+
+## Updates & Transparency
+
+### Security Updates
+
+**Stay Informed:**
+- Security bulletins
+- Email notifications
+- Status page: https://status.tradeflows.net
+- Blog: security category
+- Changelog
+
+### Transparency Report
+
+**Annual Report Includes:**
+- Data requests from authorities
+- Account terminations
+- Security incidents
+- Compliance metrics
+
+## Children's Privacy
+
+**COPPA Compliance:**
+- No users under 18
+- Age verification required
+- Account termination if underage
+- No data collection from minors
+
+## International Users
+
+### Data Transfers
+
+**Cross-Border Data:**
+- EU-US Privacy Shield (successor framework)
+- Standard Contractual Clauses
+- Adequate data protection
+- User consent
+
+**Data Residency:**
+- Primary: US East (Virginia)
+- Secondary: EU West (Ireland)
+- Asia Pacific (Singapore) - coming soon
+
+## Getting Help
+
+Security questions or concerns?
+
+- **Security Team**: security@tradeflows.net
+- **Privacy Inquiries**: privacy@tradeflows.net
+- **Report Vulnerability**: security@tradeflows.net
+- **Status Page**: https://status.tradeflows.net
+- **Help Center**: https://help.tradeflows.net/security
+
+**Emergency Contact:**
+Available 24/7 for critical security issues:
+Phone: 1-800-TRADE-PRO ext. 911
+    `
+  },
+
   // Account & Billing
   {
     id: 'subscription-management',

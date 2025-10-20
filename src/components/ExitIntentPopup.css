@@ -1,0 +1,484 @@
+/* Exit Intent Overlay */
+.exit-intent-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Exit Intent Popup */
+.exit-intent-popup {
+  position: relative;
+  background: white;
+  border-radius: 24px;
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Close Button */
+.exit-intent-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.exit-intent-close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+/* Content */
+.exit-intent-content {
+  padding: 48px 40px 40px;
+  text-align: center;
+}
+
+.exit-intent-icon {
+  margin: 0 auto 24px;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+  border-radius: 50%;
+}
+
+.exit-intent-content h2 {
+  margin: 0 0 12px;
+  font-size: 32px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #3b9eff 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.exit-intent-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+/* Benefits List */
+.exit-intent-benefits {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 12px;
+  font-size: 15px;
+  color: #1a202c;
+  transition: all 0.2s ease;
+}
+
+.benefit-item:hover {
+  background: rgba(16, 185, 129, 0.1);
+  transform: translateX(4px);
+}
+
+.benefit-item svg {
+  flex-shrink: 0;
+}
+
+/* Form */
+.exit-intent-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.exit-intent-input {
+  width: 100%;
+  padding: 16px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+}
+
+.exit-intent-input:focus {
+  outline: none;
+  border-color: #3b9eff;
+  box-shadow: 0 0 0 4px rgba(59, 158, 255, 0.1);
+}
+
+.exit-intent-submit {
+  width: 100%;
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #3b9eff 0%, #10b981 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exit-intent-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 158, 255, 0.4);
+}
+
+.exit-intent-submit:active {
+  transform: translateY(0);
+}
+
+/* Divider */
+.exit-intent-divider {
+  position: relative;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.exit-intent-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.exit-intent-divider span {
+  position: relative;
+  display: inline-block;
+  padding: 0 16px;
+  background: white;
+  color: #718096;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Trial Button */
+.exit-intent-trial-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px 24px;
+  background: white;
+  border: 2px solid #3b9eff;
+  border-radius: 12px;
+  color: #3b9eff;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.exit-intent-trial-btn:hover {
+  background: #3b9eff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 158, 255, 0.3);
+}
+
+/* Privacy Note */
+.exit-intent-privacy {
+  margin: 24px 0 0;
+  font-size: 13px;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Success State */
+.exit-intent-success {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.success-icon {
+  margin: 0 auto 24px;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: successPop 0.6s ease;
+}
+
+@keyframes successPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.exit-intent-success h2 {
+  margin: 0 0 16px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a202c;
+}
+
+.exit-intent-success p {
+  margin: 0 0 32px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4a5568;
+}
+
+.success-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.success-cta a {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #3b9eff 0%, #10b981 100%);
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.success-cta a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 158, 255, 0.4);
+}
+
+.success-cta span {
+  color: #718096;
+  font-size: 14px;
+}
+
+/* Scrollbar for popup */
+.exit-intent-popup::-webkit-scrollbar {
+  width: 8px;
+}
+
+.exit-intent-popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.exit-intent-popup::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.exit-intent-popup::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .exit-intent-popup {
+    max-width: 100%;
+    border-radius: 20px;
+    margin: 0 16px;
+  }
+
+  .exit-intent-content,
+  .exit-intent-success {
+    padding: 40px 24px 32px;
+  }
+
+  .exit-intent-content h2,
+  .exit-intent-success h2 {
+    font-size: 26px;
+  }
+
+  .exit-intent-subtitle {
+    font-size: 15px;
+  }
+
+  .benefit-item {
+    font-size: 14px;
+  }
+
+  .exit-intent-icon,
+  .success-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .exit-intent-icon svg,
+  .success-icon svg {
+    width: 56px;
+    height: 56px;
+  }
+
+  .exit-intent-close {
+    top: 16px;
+    right: 16px;
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 640px) {
+  .exit-intent-form {
+    gap: 10px;
+  }
+
+  .exit-intent-input,
+  .exit-intent-submit,
+  .exit-intent-trial-btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  .success-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .success-cta a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .success-cta span {
+    display: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .exit-intent-popup {
+    background: #1a202c;
+  }
+
+  .exit-intent-close {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+  }
+
+  .exit-intent-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .exit-intent-content h2 {
+    -webkit-text-fill-color: unset;
+    background: linear-gradient(135deg, #3b9eff 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .exit-intent-subtitle,
+  .exit-intent-success p {
+    color: #cbd5e0;
+  }
+
+  .benefit-item {
+    background: rgba(16, 185, 129, 0.15);
+    color: #e2e8f0;
+  }
+
+  .benefit-item:hover {
+    background: rgba(16, 185, 129, 0.25);
+  }
+
+  .exit-intent-input {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+
+  .exit-intent-input:focus {
+    border-color: #3b9eff;
+    box-shadow: 0 0 0 4px rgba(59, 158, 255, 0.2);
+  }
+
+  .exit-intent-divider::before {
+    background: #4a5568;
+  }
+
+  .exit-intent-divider span {
+    background: #1a202c;
+    color: #a0aec0;
+  }
+
+  .exit-intent-trial-btn {
+    background: #2d3748;
+    border-color: #3b9eff;
+  }
+
+  .exit-intent-trial-btn:hover {
+    background: #3b9eff;
+    color: white;
+  }
+
+  .exit-intent-privacy {
+    color: #a0aec0;
+  }
+
+  .exit-intent-success h2 {
+    color: #e2e8f0;
+  }
+
+  .success-cta span {
+    color: #a0aec0;
+  }
+}

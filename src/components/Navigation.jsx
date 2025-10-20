@@ -24,6 +24,7 @@ export default function Navigation() {
   const navLinks = [
     { path: '/features', label: 'Features' },
     { path: '/pricing', label: 'Pricing' },
+    { path: '/vs-luxalgo', label: 'vs LuxAlgo', highlight: true },
     { path: '/knowledge-base', label: 'Knowledge Base' },
     { path: '/blog', label: 'Blog' },
     { path: '/about', label: 'About' },
@@ -34,7 +35,16 @@ export default function Navigation() {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <Link to="/" className="nav-logo">
-          <img src="/logo-full.svg" alt="TradeFlows Professional" className="logo-full" />
+          <img src="/logo-tf-shield.svg" alt="TradeFlows Pro" className="logo-icon" style={{ height: '40px', width: 'auto' }} />
+          <span style={{
+            fontSize: '20px',
+            fontWeight: '600',
+            color: '#8B92A9',
+            letterSpacing: '0.5px',
+            marginLeft: '12px'
+          }}>
+            TRADEFLOWS PRO
+          </span>
         </Link>
 
         <div className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}>
@@ -43,7 +53,7 @@ export default function Navigation() {
               <li key={link.path}>
                 <Link
                   to={link.path}
-                  className={location.pathname === link.path ? 'active' : ''}
+                  className={`${location.pathname === link.path ? 'active' : ''} ${link.highlight ? 'highlight-glow' : ''}`}
                 >
                   {link.label}
                 </Link>
@@ -52,17 +62,17 @@ export default function Navigation() {
           </ul>
 
           <div className="nav-actions">
-            <a href="https://app.tradeflows.net" className="btn btn-text">
+            <a href="https://app.tradeflows.net?utm_source=website&utm_medium=navigation&utm_campaign=signin" className="btn btn-text">
               Sign In
             </a>
-            <a href="https://app.tradeflows.net?signup=true" className="btn btn-primary">
+            <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-primary">
               Start Free Trial
             </a>
           </div>
         </div>
 
         <button
-          className="mobile-menu-toggle"
+          className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >

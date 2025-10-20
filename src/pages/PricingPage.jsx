@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
+import ROICalculator from '../components/ROICalculator'
 import './PricingPage.css'
 
 export default function PricingPage() {
@@ -360,6 +361,17 @@ export default function PricingPage() {
           </div>
         </section>
 
+        {/* ROI Calculator */}
+        <section className="roi-section section">
+          <div className="container">
+            <div className="section-header text-center">
+              <h2>Calculate Your ROI</h2>
+              <p>See exactly how much value TradeFlows Pro delivers for your trading</p>
+            </div>
+            <ROICalculator />
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="faq-section section">
           <div className="container">
@@ -418,7 +430,7 @@ export default function PricingPage() {
             <div className="cta-box">
               <h2>Ready to Start Trading Smarter?</h2>
               <p>Join thousands of traders using TradeFlows Pro</p>
-              <a href="https://app.tradeflows.net?signup=true" className="btn btn-primary btn-large">
+              <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-primary btn-large">
                 Start Your Free Trial
               </a>
               <p className="cta-subtext">No credit card required for trial • Cancel anytime</p>
