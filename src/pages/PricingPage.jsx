@@ -14,7 +14,7 @@ export default function PricingPage() {
       badgeColor: 'orange',
       price: billingCycle === 'monthly' ? 0 : 0,
       originalPrice: null,
-      period: '7 days',
+      period: ' / 7 days',
       then: 'Then $49.99/month',
       description: 'Perfect for trying out all premium features',
       features: [
