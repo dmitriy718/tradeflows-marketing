@@ -7,6 +7,7 @@ import ScrollTracker from './components/ScrollTracker'
 import LiveChatWidget from './components/LiveChatWidget'
 import ExitIntentPopup from './components/ExitIntentPopup'
 import SocialProofNotifications from './components/SocialProofNotifications'
+import PWAInstallPrompt from './components/PWAInstallPrompt'
 // Lazy load to prevent initialization errors
 const InteractiveProductTour = lazy(() => import('./components/InteractiveProductTour'))
 const LiveTradingSimulator = lazy(() => import('./components/LiveTradingSimulator'))
@@ -100,6 +101,7 @@ export default function App() {
       <LiveChatWidget />
       <ExitIntentPopup />
       <SocialProofNotifications />
+      <PWAInstallPrompt />
       <Suspense fallback={<div />}>
         <InteractiveProductTour autoStart={false} />
         <LiveTradingSimulator />

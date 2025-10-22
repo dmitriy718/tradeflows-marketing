@@ -1,0 +1,80 @@
+{
+  "name": "TradeFlows Pro - Advanced AI Trading Platform",
+  "short_name": "TradeFlows Pro",
+  "description": "Professional trading platform with AI-powered strategies, real-time market data, and advanced analytics",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0a0d1a",
+  "theme_color": "#3b9eff",
+  "orientation": "any",
+  "categories": ["finance", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/logo-tf-shield.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo-tf-shield-icon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/logo-tf-shield-icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Features",
+      "short_name": "Features",
+      "description": "Explore TradeFlows Pro features",
+      "url": "/features",
+      "icons": [
+        {
+          "src": "/logo-tf-shield-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Pricing",
+      "description": "View pricing plans",
+      "url": "/pricing",
+      "icons": [
+        {
+          "src": "/logo-tf-shield-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Start Trial",
+      "short_name": "Trial",
+      "description": "Start your free 7-day trial",
+      "url": "https://app.tradeflows.net?signup=true&utm_source=pwa&utm_medium=shortcut&utm_campaign=trial",
+      "icons": [
+        {
+          "src": "/logo-tf-shield-icon.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "lang": "en-US",
+  "dir": "ltr"
+}
