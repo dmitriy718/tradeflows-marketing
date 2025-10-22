@@ -75,7 +75,7 @@ export default function App() {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/vs-luxalgo" element={<ComparisonPage />} />
             <Route path="/knowledge-base" element={<KnowledgeBasePage />} />
-            <Route path="/knowledge-base/:slug" element={<KBArticle />} />
+            <Route path="/knowledge-base/:articleId" element={<KBArticle />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/blog" element={<BlogPage />} />
