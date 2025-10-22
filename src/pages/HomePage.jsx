@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import StructuredData from '../components/StructuredData'
 import Testimonials from '../components/Testimonials'
 import FAQ, { commonFAQs } from '../components/FAQ'
 import NewsletterSignup from '../components/NewsletterSignup'
@@ -47,6 +48,7 @@ export default function HomePage() {
         canonical="/"
         structuredData={structuredData}
       />
+      <StructuredData type="home" />
 
       <div className="home-page">
         {/* Hero Section */}
