@@ -64,11 +64,11 @@ export default function Footer() {
           <div className="footer-section">
             <h4 className="footer-title">Resources</h4>
             <ul className="footer-links">
-              <li><Link to="/knowledge-base/quick-start-guide">Getting Started</Link></li>
-              <li><Link to="/knowledge-base/api-documentation">API Docs</Link></li>
+              <li><Link to="/getting-started">Getting Started</Link></li>
+              <li><Link to="/api-documentation">API Docs</Link></li>
               <li><Link to="/blog">Community & Blog</Link></li>
               <li><Link to="/contact">Support Center</Link></li>
-              <li><Link to="/knowledge-base/security">Security</Link></li>
+              <li><Link to="/security">Security</Link></li>
             </ul>
           </div>
 

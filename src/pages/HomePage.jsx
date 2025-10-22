@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import Testimonials from '../components/Testimonials'
+import FAQ, { commonFAQs } from '../components/FAQ'
+import NewsletterSignup from '../components/NewsletterSignup'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -286,65 +289,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Social Proof */}
-        <section className="social-proof section">
-          <div className="container">
-            <div className="section-header text-center">
-              <h2>Trusted by Traders Worldwide</h2>
-              <p>See what our users are saying</p>
-            </div>
+        {/* Testimonials */}
+        <Testimonials
+          limit={6}
+          title="Trusted by Thousands of Traders"
+          subtitle="See what our users have to say about their experience with TradeFlows Pro"
+        />
 
-            <div className="testimonials-grid">
-              <div className="testimonial-card">
-                <div className="testimonial-rating">
-                  ★★★★★
-                </div>
-                <p className="testimonial-text">
-                  "TradeFlows Pro completely transformed how I trade. The AI strategies have helped me identify opportunities I would have missed, and the portfolio analytics keep me disciplined."
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">JD</div>
-                  <div className="author-info">
-                    <div className="author-name">James Davidson</div>
-                    <div className="author-role">Day Trader, 5 years</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-card">
-                <div className="testimonial-rating">
-                  ★★★★★
-                </div>
-                <p className="testimonial-text">
-                  "The real-time data and advanced charting tools rival platforms costing 10x more. Best investment I've made in my trading career. The support team is incredibly responsive too."
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">SC</div>
-                  <div className="author-info">
-                    <div className="author-name">Sarah Chen</div>
-                    <div className="author-role">Swing Trader, Crypto & Stocks</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="testimonial-card">
-                <div className="testimonial-rating">
-                  ★★★★★
-                </div>
-                <p className="testimonial-text">
-                  "Finally, a platform that doesn't overwhelm beginners but still has all the advanced features pros need. The AI insights are game-changing for risk management."
-                </p>
-                <div className="testimonial-author">
-                  <div className="author-avatar">MR</div>
-                  <div className="author-info">
-                    <div className="author-name">Michael Rodriguez</div>
-                    <div className="author-role">Part-Time Trader</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* FAQ */}
+        <FAQ
+          questions={commonFAQs.general}
+          title="Frequently Asked Questions"
+          subtitle="Everything you need to know about TradeFlows Pro"
+          columns={2}
+        />
 
         {/* CTA Section */}
         <section className="cta-section section">
@@ -370,6 +328,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Newsletter */}
+        <NewsletterSignup
+          title="Stay Ahead of the Market"
+          subtitle="Get exclusive trading insights, AI strategy updates, and platform news delivered weekly"
+        />
       </div>
     </>
   )

@@ -26,6 +26,9 @@ const TermsPage = lazy(() => import('./pages/TermsPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 const ComparisonPage = lazy(() => import('./pages/ComparisonPage'))
 const PressKitPage = lazy(() => import('./pages/PressKitPage'))
+const GettingStartedPage = lazy(() => import('./pages/GettingStartedPage'))
+const APIDocumentationPage = lazy(() => import('./pages/APIDocumentationPage'))
+const SecurityPage = lazy(() => import('./pages/SecurityPage'))
 
 // Loading fallback component
 function PageLoader() {
@@ -84,6 +87,9 @@ export default function App() {
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/press-kit" element={<PressKitPage />} />
+            <Route path="/getting-started" element={<GettingStartedPage />} />
+            <Route path="/api-documentation" element={<APIDocumentationPage />} />
+            <Route path="/security" element={<SecurityPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

@@ -157,6 +157,20 @@
 
 .stat {
   text-align: left;
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(59, 158, 255, 0.3);
+  border-radius: 16px;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(59, 158, 255, 0.15), 0 0 0 1px rgba(59, 158, 255, 0.1) inset;
+}
+
+.stat:hover {
+  background: linear-gradient(135deg, rgba(59, 158, 255, 0.15) 0%, rgba(16, 185, 129, 0.08) 100%);
+  border-color: rgba(59, 158, 255, 0.5);
+  box-shadow: 0 12px 40px rgba(59, 158, 255, 0.3), 0 0 30px rgba(59, 158, 255, 0.2);
+  transform: translateY(-4px);
 }
 
 .stat-value {
