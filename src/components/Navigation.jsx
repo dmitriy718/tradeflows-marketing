@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useFocusTrap } from '../hooks/useKeyboardNavigation'
 import './Navigation.css'
 
 export default function Navigation() {
@@ -7,6 +8,7 @@ export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
+  const mobileMenuRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,36 @@ export default function Navigation() {
     setIsMobileMenuOpen(false)
   }, [location])
 
+  // Focus trap for mobile menu
+  useFocusTrap(mobileMenuRef, isMobileMenuOpen && isMobile, () => {
+    setIsMobileMenuOpen(false)
+  })
+
+  // Keyboard support: Close mobile menu on Escape
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isMobileMenuOpen) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyDown)
+    return () => document.removeEventListener('keydown', handleKeyDown)
+  }, [isMobileMenuOpen])
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen && isMobile) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen, isMobile])
+
   const navLinks = [
     { path: '/features', label: 'Features' },
     { path: '/pricing', label: 'Pricing' },
@@ -44,23 +76,30 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
+    <nav
+      className={`navigation ${isScrolled ? 'scrolled' : ''}`}
+      role="navigation"
+      aria-label="Main navigation"
+    >
       <div className="nav-container">
-        <Link to="/" className="nav-logo">
-          <img src="/logo-tf-shield.svg" alt="TradeFlows Pro" className="logo-icon" style={{ height: '40px', width: 'auto' }} />
+        <Link to="/" className="nav-logo" aria-label="TradeFlows Pro - Home">
+          <img src="/logo-tf-shield.svg" alt="" aria-hidden="true" className="logo-icon" style={{ height: '40px', width: 'auto' }} />
           <span style={{
             fontSize: '20px',
             fontWeight: '600',
             color: '#8B92A9',
             letterSpacing: '0.5px',
             marginLeft: '12px'
-          }}>
+          }} aria-label="TradeFlows Pro">
             TRADEFLOWS PRO
           </span>
         </Link>
 
         <div
+          ref={mobileMenuRef}
+          id="mobile-menu"
           className={`nav-menu ${isMobileMenuOpen ? 'open' : ''}`}
+          aria-hidden={isMobile ? !isMobileMenuOpen : undefined}
           style={isMobileMenuOpen && isMobile ? {
             position: 'fixed',
             top: '72px',
@@ -101,6 +140,7 @@ export default function Navigation() {
                 <Link
                   to={link.path}
                   className={`${location.pathname === link.path ? 'active' : ''} ${link.highlight ? 'highlight-glow' : ''}`}
+                  aria-current={location.pathname === link.path ? 'page' : undefined}
                   style={isMobileMenuOpen && isMobile ? {
                     width: '100%',
                     padding: '1.5rem',
@@ -136,11 +176,14 @@ export default function Navigation() {
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={isMobileMenuOpen}
+          aria-controls="mobile-menu"
+          type="button"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
         </button>
       </div>
     </nav>

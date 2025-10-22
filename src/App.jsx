@@ -8,6 +8,7 @@ import LiveChatWidget from './components/LiveChatWidget'
 import ExitIntentPopup from './components/ExitIntentPopup'
 import SocialProofNotifications from './components/SocialProofNotifications'
 import PWAInstallPrompt from './components/PWAInstallPrompt'
+import SkipLink from './components/SkipLink'
 // Lazy load to prevent initialization errors
 const InteractiveProductTour = lazy(() => import('./components/InteractiveProductTour'))
 const LiveTradingSimulator = lazy(() => import('./components/LiveTradingSimulator'))
@@ -35,28 +36,37 @@ const SecurityPage = lazy(() => import('./pages/SecurityPage'))
 // Loading fallback component
 function PageLoader() {
   return (
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      minHeight: '60vh',
-      fontSize: '18px',
-      color: '#64748b'
-    }}>
+    <div
+      role="status"
+      aria-live="polite"
+      aria-label="Loading page content"
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '60vh',
+        fontSize: '18px',
+        color: '#64748b'
+      }}
+    >
       <div style={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: '16px'
       }}>
-        <div style={{
-          width: '40px',
-          height: '40px',
-          border: '3px solid #e2e8f0',
-          borderTop: '3px solid #3b9eff',
-          borderRadius: '50%',
-          animation: 'spin 0.8s linear infinite'
-        }}></div>
+        <div
+          aria-hidden="true"
+          style={{
+            width: '40px',
+            height: '40px',
+            border: '3px solid #e2e8f0',
+            borderTop: '3px solid #3b9eff',
+            borderRadius: '50%',
+            animation: 'spin 0.8s linear infinite'
+          }}
+        ></div>
+        <span className="sr-only">Loading...</span>
         <style>{`
           @keyframes spin {
             to { transform: rotate(360deg); }
@@ -70,10 +80,11 @@ function PageLoader() {
 export default function App() {
   return (
     <>
+      <SkipLink />
       <ScrollToTop />
       <ScrollTracker />
       <Navigation />
-      <main>
+      <main id="main-content" role="main" aria-label="Main content">
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -102,7 +113,7 @@ export default function App() {
       <ExitIntentPopup />
       <SocialProofNotifications />
       <PWAInstallPrompt />
-      <Suspense fallback={<div />}>
+      <Suspense fallback={<div aria-hidden="true" />}>
         <InteractiveProductTour autoStart={false} />
         <LiveTradingSimulator />
       </Suspense>

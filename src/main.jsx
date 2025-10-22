@@ -5,6 +5,7 @@ import { HelmetProvider } from 'react-helmet-async'
 import { AnalyticsProvider } from './components/AnalyticsProvider'
 import App from './App'
 import './styles/global.css'
+import './styles/accessibility.css'
 import { initWebVitals } from './utils/webVitals'
 import { registerServiceWorker } from './utils/pwa'
 
