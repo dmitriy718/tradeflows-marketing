@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import { trackNewsletterSignup } from '../utils/analytics'
 import './NewsletterSignup.css'
 
-export default function NewsletterSignup({ inline = false, title, subtitle }) {
+export default function NewsletterSignup({ inline = false, title, subtitle, location = 'unknown' }) {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle, loading, success, error
   const [message, setMessage] = useState('')
@@ -22,6 +23,9 @@ export default function NewsletterSignup({ inline = false, title, subtitle }) {
       try {
         // TODO: Integrate with newsletter service (Mailchimp, SendGrid, etc.)
         console.log('Newsletter signup:', email)
+
+        // Track newsletter signup in analytics
+        trackNewsletterSignup(location || (inline ? 'inline' : 'homepage'))
 
         setStatus('success')
         setMessage('Successfully subscribed! Check your email for confirmation.')

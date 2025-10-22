@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Navigation from './components/Navigation'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollTracker from './components/ScrollTracker'
 import LiveChatWidget from './components/LiveChatWidget'
 import ExitIntentPopup from './components/ExitIntentPopup'
 import SocialProofNotifications from './components/SocialProofNotifications'
@@ -69,6 +70,7 @@ export default function App() {
   return (
     <>
       <ScrollToTop />
+      <ScrollTracker />
       <Navigation />
       <main>
         <Suspense fallback={<PageLoader />}>

@@ -4,9 +4,11 @@ import StructuredData from '../components/StructuredData'
 import Testimonials from '../components/Testimonials'
 import FAQ, { commonFAQs } from '../components/FAQ'
 import NewsletterSignup from '../components/NewsletterSignup'
+import { useTracking } from '../hooks/useTracking'
 import './HomePage.css'
 
 export default function HomePage() {
+  const { trackCTA, trackFeature } = useTracking()
   // Structured data for the homepage
   const structuredData = {
     '@context': 'https://schema.org',
@@ -73,13 +75,21 @@ export default function HomePage() {
                 TradeFlows Pro combines real-time market data, intelligent strategy recommendations, and advanced portfolio analytics to help you make confident trading decisions. Join thousands of traders who've transformed their approach.
               </p>
               <div className="hero-actions">
-                <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-hero-primary">
+                <a
+                  href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial"
+                  className="btn btn-hero-primary"
+                  onClick={() => trackCTA('Start Free Trial', 'Hero Section')}
+                >
                   Start Free 7-Day Trial
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7 10h6m0 0L10 7m3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </a>
-                <Link to="/features" className="btn btn-hero-secondary">
+                <Link
+                  to="/features"
+                  className="btn btn-hero-secondary"
+                  onClick={() => trackCTA('Explore Features', 'Hero Section')}
+                >
                   Explore Features
                 </Link>
               </div>
@@ -157,7 +167,11 @@ export default function HomePage() {
                 </div>
                 <h3>Real-Time Market Data</h3>
                 <p>Live streaming quotes, charts, and market depth across stocks, crypto, forex, and commodities. Never miss a trading opportunity.</p>
-                <Link to="/features#real-time-data" className="feature-link">
+                <Link
+                  to="/features#real-time-data"
+                  className="feature-link"
+                  onClick={() => trackFeature('Real-Time Market Data')}
+                >
                   Learn more →
                 </Link>
               </div>
@@ -176,7 +190,11 @@ export default function HomePage() {
                 </div>
                 <h3>AI Strategy Builder</h3>
                 <p>Let our AI analyze market conditions and suggest optimal trading strategies based on your risk profile and goals.</p>
-                <Link to="/features#ai-strategies" className="feature-link">
+                <Link
+                  to="/features#ai-strategies"
+                  className="feature-link"
+                  onClick={() => trackFeature('AI Strategy Builder')}
+                >
                   Learn more →
                 </Link>
               </div>
@@ -193,7 +211,11 @@ export default function HomePage() {
                 </div>
                 <h3>Advanced Portfolio Management</h3>
                 <p>Track performance, analyze risk, and optimize your portfolio with institutional-grade analytics and reporting.</p>
-                <Link to="/features#portfolio" className="feature-link">
+                <Link
+                  to="/features#portfolio"
+                  className="feature-link"
+                  onClick={() => trackFeature('Advanced Portfolio Management')}
+                >
                   Learn more →
                 </Link>
               </div>
@@ -210,7 +232,11 @@ export default function HomePage() {
                 </div>
                 <h3>Smart Alerts & Notifications</h3>
                 <p>Custom price alerts, technical indicator signals, and AI-powered trade notifications delivered instantly.</p>
-                <Link to="/features#alerts" className="feature-link">
+                <Link
+                  to="/features#alerts"
+                  className="feature-link"
+                  onClick={() => trackFeature('Smart Alerts & Notifications')}
+                >
                   Learn more →
                 </Link>
               </div>
@@ -227,7 +253,11 @@ export default function HomePage() {
                 </div>
                 <h3>Technical Analysis Tools</h3>
                 <p>100+ technical indicators, drawing tools, and chart patterns. Everything professional traders need in one platform.</p>
-                <Link to="/features#technical-analysis" className="feature-link">
+                <Link
+                  to="/features#technical-analysis"
+                  className="feature-link"
+                  onClick={() => trackFeature('Technical Analysis Tools')}
+                >
                   Learn more →
                 </Link>
               </div>
@@ -244,14 +274,22 @@ export default function HomePage() {
                 </div>
                 <h3>Performance Analytics</h3>
                 <p>Detailed P&L tracking, win/loss ratios, and performance metrics to continuously improve your trading.</p>
-                <Link to="/features#analytics" className="feature-link">
+                <Link
+                  to="/features#analytics"
+                  className="feature-link"
+                  onClick={() => trackFeature('Performance Analytics')}
+                >
                   Learn more →
                 </Link>
               </div>
             </div>
 
             <div className="section-cta">
-              <Link to="/features" className="btn btn-large btn-primary">
+              <Link
+                to="/features"
+                className="btn btn-large btn-primary"
+                onClick={() => trackCTA('View All Features', 'Features Overview')}
+              >
                 View All Features
               </Link>
             </div>
@@ -284,7 +322,14 @@ export default function HomePage() {
                   <div className="stat-text">No Additional Subscriptions</div>
                 </div>
               </div>
-              <Link to="/vs-luxalgo" className="btn btn-large btn-gradient">
+              <Link
+                to="/vs-luxalgo"
+                className="btn btn-large btn-gradient"
+                onClick={() => {
+                  trackCTA('View Full Comparison', 'Comparison Callout')
+                  trackFeature('LuxAlgo Comparison')
+                }}
+              >
                 View Full Comparison
               </Link>
             </div>
@@ -314,10 +359,18 @@ export default function HomePage() {
                 <h2>Ready to Transform Your Trading?</h2>
                 <p>Start your 7-day free trial. No credit card required. Cancel anytime.</p>
                 <div className="cta-actions">
-                  <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-large btn-cta-primary">
+                  <a
+                    href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial"
+                    className="btn btn-large btn-cta-primary"
+                    onClick={() => trackCTA('Start Free Trial', 'Bottom CTA')}
+                  >
                     Start Free Trial
                   </a>
-                  <Link to="/pricing" className="btn btn-large btn-cta-secondary">
+                  <Link
+                    to="/pricing"
+                    className="btn btn-large btn-cta-secondary"
+                    onClick={() => trackCTA('View Pricing', 'Bottom CTA')}
+                  >
                     View Pricing
                   </Link>
                 </div>
