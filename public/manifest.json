@@ -40,37 +40,13 @@
       "name": "Features",
       "short_name": "Features",
       "description": "Explore TradeFlows Pro features",
-      "url": "/features",
-      "icons": [
-        {
-          "src": "/logo-tf-shield-icon.svg",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/features"
     },
     {
       "name": "Pricing",
       "short_name": "Pricing",
       "description": "View pricing plans",
-      "url": "/pricing",
-      "icons": [
-        {
-          "src": "/logo-tf-shield-icon.svg",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "Start Trial",
-      "short_name": "Trial",
-      "description": "Start your free 7-day trial",
-      "url": "https://app.tradeflows.net?signup=true&utm_source=pwa&utm_medium=shortcut&utm_campaign=trial",
-      "icons": [
-        {
-          "src": "/logo-tf-shield-icon.svg",
-          "sizes": "96x96"
-        }
-      ]
+      "url": "/pricing"
     }
   ],
   "related_applications": [],
