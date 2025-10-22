@@ -1,176 +1,144 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+import { generateNotification, getRandomDelay, getDisplayDuration } from '../data/socialProofData'
+import { trackEvent } from '../utils/analytics'
 import './SocialProofNotifications.css'
 
 export default function SocialProofNotifications() {
   const [currentNotification, setCurrentNotification] = useState(null)
   const [isVisible, setIsVisible] = useState(false)
-  const [hasShownInitial, setHasShownInitial] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const nextTimeoutRef = useRef(null)
+  const hideTimeoutRef = useRef(null)
+  const shownNotificationsRef = useRef(new Set())
 
-  const notifications = [
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Michael Rodriguez',
-      location: 'New York, NY',
-      action: 'started their free trial',
-      time: '2 minutes ago'
-    },
-    {
-      type: 'upgrade',
-      icon: '🚀',
-      name: 'Sarah Chen',
-      location: 'San Francisco, CA',
-      action: 'upgraded to Professional',
-      time: '5 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'David Kim',
-      location: 'Austin, TX',
-      action: 'joined TradeFlows Pro',
-      time: '8 minutes ago'
-    },
-    {
-      type: 'review',
-      icon: '⭐',
-      name: 'Jennifer Wilson',
-      location: 'Chicago, IL',
-      action: 'gave us 5 stars',
-      time: '12 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Robert Taylor',
-      location: 'Boston, MA',
-      action: 'started trading',
-      time: '15 minutes ago'
-    },
-    {
-      type: 'upgrade',
-      icon: '🚀',
-      name: 'Amanda Martinez',
-      location: 'Seattle, WA',
-      action: 'upgraded to Premium',
-      time: '18 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'James Anderson',
-      location: 'Miami, FL',
-      action: 'started their trial',
-      time: '22 minutes ago'
-    },
-    {
-      type: 'review',
-      icon: '⭐',
-      name: 'Lisa Thompson',
-      location: 'Denver, CO',
-      action: 'left a positive review',
-      time: '25 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Kevin Patel',
-      location: 'Los Angeles, CA',
-      action: 'joined TradeFlows Pro',
-      time: '28 minutes ago'
-    },
-    {
-      type: 'upgrade',
-      icon: '🚀',
-      name: 'Emily Davis',
-      location: 'Portland, OR',
-      action: 'upgraded to Professional',
-      time: '32 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Daniel Lee',
-      location: 'Phoenix, AZ',
-      action: 'started their free trial',
-      time: '35 minutes ago'
-    },
-    {
-      type: 'review',
-      icon: '⭐',
-      name: 'Jessica Brown',
-      location: 'Atlanta, GA',
-      action: 'rated us 5 stars',
-      time: '38 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Christopher White',
-      location: 'Dallas, TX',
-      action: 'joined TradeFlows Pro',
-      time: '42 minutes ago'
-    },
-    {
-      type: 'upgrade',
-      icon: '🚀',
-      name: 'Michelle Garcia',
-      location: 'San Diego, CA',
-      action: 'upgraded to Premium',
-      time: '45 minutes ago'
-    },
-    {
-      type: 'signup',
-      icon: '✨',
-      name: 'Brian Johnson',
-      location: 'Nashville, TN',
-      action: 'started trading',
-      time: '48 minutes ago'
+  // Show next notification
+  const showNextNotification = () => {
+    if (isPaused) return
+
+    // Generate new notification
+    const notification = generateNotification()
+
+    // Make sure we haven't shown this exact combination recently
+    const notificationKey = `${notification.name}-${notification.action}`
+    if (shownNotificationsRef.current.has(notificationKey)) {
+      // Try again with a new notification
+      setTimeout(showNextNotification, 100)
+      return
     }
-  ]
+
+    // Track this notification
+    shownNotificationsRef.current.add(notificationKey)
+
+    // Limit the set size to prevent memory issues
+    if (shownNotificationsRef.current.size > 100) {
+      const firstKey = shownNotificationsRef.current.values().next().value
+      shownNotificationsRef.current.delete(firstKey)
+    }
+
+    // Show notification
+    setCurrentNotification(notification)
+    setIsVisible(true)
+
+    // Track in analytics
+    trackEvent('social_proof_shown', {
+      event_category: 'engagement',
+      event_label: notification.type,
+      non_interaction: true
+    })
+
+    // Schedule hide
+    const displayDuration = getDisplayDuration(notification.type)
+    hideTimeoutRef.current = setTimeout(() => {
+      setIsVisible(false)
+
+      // Schedule next notification after fade out
+      setTimeout(() => {
+        const nextDelay = getRandomDelay()
+        nextTimeoutRef.current = setTimeout(showNextNotification, nextDelay)
+      }, 500) // Wait for fade out
+    }, displayDuration)
+  }
 
   useEffect(() => {
-    // Don't show if user has dismissed
+    // Check if user has dismissed
     const dismissed = localStorage.getItem('socialProofDismissed')
     if (dismissed === 'true') {
       return
     }
 
-    let currentIndex = Math.floor(Math.random() * notifications.length)
+    // Check if user has seen too many (max 10 per session)
+    const sessionCount = sessionStorage.getItem('socialProofCount')
+    if (sessionCount && parseInt(sessionCount) >= 10) {
+      return
+    }
 
-    // Show first notification after 3 seconds
-    const initialTimeout = setTimeout(() => {
-      setCurrentNotification(notifications[currentIndex])
-      setIsVisible(true)
-      setHasShownInitial(true)
-    }, 3000)
-
-    // Rotate notifications
-    const rotationInterval = setInterval(() => {
-      // Hide current
-      setIsVisible(false)
-
-      // After fade out, show next
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % notifications.length
-        setCurrentNotification(notifications[currentIndex])
-        setIsVisible(true)
-      }, 500)
-    }, 8000) // Show each notification for 8 seconds
+    // Show first notification after delay (8-15 seconds to not be intrusive)
+    const initialDelay = (Math.random() * 7 + 8) * 1000
+    nextTimeoutRef.current = setTimeout(showNextNotification, initialDelay)
 
     return () => {
-      clearTimeout(initialTimeout)
-      clearInterval(rotationInterval)
+      if (nextTimeoutRef.current) clearTimeout(nextTimeoutRef.current)
+      if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current)
     }
-  }, [])
+  }, [isPaused])
 
   const handleClose = () => {
     setIsVisible(false)
     localStorage.setItem('socialProofDismissed', 'true')
+
+    // Clear timers
+    if (nextTimeoutRef.current) clearTimeout(nextTimeoutRef.current)
+    if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current)
+
+    // Track dismissal
+    trackEvent('social_proof_dismissed', {
+      event_category: 'engagement',
+      event_label: currentNotification?.type || 'unknown'
+    })
+
     // After fade out, remove notification
     setTimeout(() => {
       setCurrentNotification(null)
     }, 300)
+  }
+
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+    if (hideTimeoutRef.current) {
+      clearTimeout(hideTimeoutRef.current)
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+
+    if (currentNotification && isVisible) {
+      // Resume the hide timer
+      const displayDuration = getDisplayDuration(currentNotification.type)
+      hideTimeoutRef.current = setTimeout(() => {
+        setIsVisible(false)
+
+        setTimeout(() => {
+          const nextDelay = getRandomDelay()
+          nextTimeoutRef.current = setTimeout(showNextNotification, nextDelay)
+        }, 500)
+      }, displayDuration / 2) // Give some grace time
+    }
+  }
+
+  const handleClick = () => {
+    if (!currentNotification) return
+
+    // Track click
+    trackEvent('social_proof_clicked', {
+      event_category: 'engagement',
+      event_label: currentNotification.type,
+      value: 1
+    })
+
+    // Increment session counter
+    const count = parseInt(sessionStorage.getItem('socialProofCount') || '0')
+    sessionStorage.setItem('socialProofCount', (count + 1).toString())
   }
 
   if (!currentNotification) {
@@ -178,19 +146,31 @@ export default function SocialProofNotifications() {
   }
 
   return (
-    <div className={`social-proof-notification ${isVisible ? 'visible' : ''}`}>
+    <div
+      className={`social-proof-notification ${isVisible ? 'visible' : ''} ${isPaused ? 'paused' : ''}`}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={handleClick}
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+    >
       <button
         className="social-proof-close"
-        onClick={handleClose}
+        onClick={(e) => {
+          e.stopPropagation()
+          handleClose()
+        }}
         aria-label="Dismiss notifications"
+        type="button"
       >
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
         </svg>
       </button>
 
       <div className="social-proof-content">
-        <div className="social-proof-icon">{currentNotification.icon}</div>
+        <div className="social-proof-icon" aria-hidden="true">{currentNotification.icon}</div>
         <div className="social-proof-details">
           <div className="social-proof-header">
             <span className="social-proof-name">{currentNotification.name}</span>
@@ -200,7 +180,7 @@ export default function SocialProofNotifications() {
             {currentNotification.action}
           </div>
           <div className="social-proof-location">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
               <path d="M6 1a3 3 0 00-3 3c0 2 3 6 3 6s3-4 3-6a3 3 0 00-3-3z" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"/>
               <circle cx="6" cy="4" r="1" fill="currentColor"/>
             </svg>
@@ -210,7 +190,7 @@ export default function SocialProofNotifications() {
       </div>
 
       <div className="social-proof-verified">
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
           <circle cx="7" cy="7" r="6" fill="#10b981"/>
           <path d="M4 7l2 2 4-4" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

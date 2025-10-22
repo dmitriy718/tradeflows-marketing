@@ -24,6 +24,17 @@
   transform: translateX(0);
 }
 
+.social-proof-notification.paused {
+  transform: translateX(0) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.social-proof-notification:hover {
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
 /* Close Button */
 .social-proof-close {
   position: absolute;
