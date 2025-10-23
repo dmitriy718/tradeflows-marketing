@@ -142,7 +142,12 @@
       "Bash(nslookup:*)",
       "Bash(curl:*)",
       "Bash(npm install:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(npx vite build)",
+      "Bash(npm run dashboard:*)",
+      "Bash(npm start)",
+      "Bash(echo $ANTHROPIC_API_KEY)",
+      "Bash(npm test:*)"
     ],
     "deny": [],
     "ask": []

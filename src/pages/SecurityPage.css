@@ -1,7 +1,7 @@
 /* Security Page Styles */
 
 .security-page {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  background: linear-gradient(180deg, #64748b 0%, #475569 50%, #334155 100%);
   min-height: 100vh;
 }
 
@@ -177,18 +177,26 @@
 }
 
 .sec-cert-card {
-  background: white;
-  border: 2px solid #e2e8f0;
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 20px;
   padding: 40px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 32px rgba(16, 185, 129, 0.08),
+    0 0 0 1px rgba(16, 185, 129, 0.05) inset;
 }
 
 .sec-cert-card:hover {
-  border-color: #10b981;
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.1);
-  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow:
+    0 12px 40px rgba(16, 185, 129, 0.2),
+    0 0 30px rgba(16, 185, 129, 0.15),
+    0 0 0 1px rgba(16, 185, 129, 0.2) inset;
+  transform: translateY(-6px);
 }
 
 .sec-cert-badge {
@@ -262,17 +270,25 @@
 }
 
 .sec-measure {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 20px;
   padding: 40px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 24px rgba(16, 185, 129, 0.06),
+    0 0 0 1px rgba(16, 185, 129, 0.05) inset;
 }
 
 .sec-measure:hover {
-  border-color: #10b981;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 12px 32px rgba(16, 185, 129, 0.15),
+    0 0 20px rgba(16, 185, 129, 0.1),
+    0 0 0 1px rgba(16, 185, 129, 0.15) inset;
+  transform: translateY(-4px);
 }
 
 .sec-measure-icon {
@@ -366,15 +382,22 @@
   display: flex;
   gap: 16px;
   padding: 20px;
-  background: white;
-  border: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.12);
   border-radius: 12px;
   transition: all 0.3s ease;
+  box-shadow:
+    0 4px 16px rgba(16, 185, 129, 0.05),
+    0 0 0 1px rgba(16, 185, 129, 0.03) inset;
 }
 
 .sec-principle:hover {
-  border-color: #10b981;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 8px 24px rgba(16, 185, 129, 0.1),
+    0 0 0 1px rgba(16, 185, 129, 0.1) inset;
+  transform: translateY(-2px);
 }
 
 .sec-principle-icon {
@@ -506,18 +529,26 @@
 }
 
 .sec-practice-card {
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 20px;
   padding: 32px;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 8px 24px rgba(16, 185, 129, 0.06),
+    0 0 0 1px rgba(16, 185, 129, 0.05) inset;
 }
 
 .sec-practice-card:hover {
-  border-color: #10b981;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 12px 32px rgba(16, 185, 129, 0.15),
+    0 0 20px rgba(16, 185, 129, 0.1),
+    0 0 0 1px rgba(16, 185, 129, 0.15) inset;
+  transform: translateY(-4px);
 }
 
 .sec-practice-number {
