@@ -43,7 +43,7 @@ export default function LiveChatWidget() {
 
   const autoResponses = {
     'how does the free trial work': {
-      text: 'Great question! Our 7-day free trial gives you full access to all Premium features. No credit card required. You can explore AI strategies, real-time data, advanced charting, and portfolio management. After 7 days, you can choose to upgrade to Premium ($49.99/mo) or Professional ($79.99/mo).',
+      text: 'Great question! Our 3-day free trial gives you full access to all Premium features. No credit card required. You can explore AI strategies, real-time data, advanced charting, and portfolio management. After 3 days, you can choose to upgrade to Premium ($49.99/mo) or Professional ($79.99/mo).',
       delay: 1500
     },
     'what payment methods do you accept': {
@@ -59,7 +59,7 @@ export default function LiveChatWidget() {
       delay: 1800
     },
     'pricing': {
-      text: 'We have three plans: 7-Day Free Trial (then $49.99/mo), Premium at $49.99/mo ($479.99/year - save 20%), and Professional at $79.99/mo ($767.99/year - save 20%). All plans include mobile & desktop apps, real-time data, and AI strategies.',
+      text: 'We have three plans: 3-day Free Trial (then $49.99/mo), Premium at $49.99/mo ($479.99/year - save 20%), and Professional at $79.99/mo ($767.99/year - save 20%). All plans include mobile & desktop apps, real-time data, and AI strategies.',
       delay: 1400
     },
     'features': {

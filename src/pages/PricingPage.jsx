@@ -9,16 +9,16 @@ export default function PricingPage() {
   const plans = [
     {
       id: 'trial',
-      name: '7-Day Free Trial',
+      name: '3-day Free Trial',
       badge: 'Most Popular',
       badgeColor: 'orange',
       price: billingCycle === 'monthly' ? 0 : 0,
       originalPrice: null,
-      period: ' / 7 days',
+      period: ' / 3 days',
       then: 'Then $49.99/month',
       description: 'Perfect for trying out all premium features',
       features: [
-        'Full Premium access for 7 days',
+        'Full Premium access for 3 days',
         'AI trading strategies',
         'Real-time market data',
         'Advanced charting tools',
@@ -91,7 +91,7 @@ export default function PricingPage() {
     <>
       <Helmet>
         <title>Pricing - TradeFlows Pro Plans</title>
-        <meta name="description" content="Choose the perfect TradeFlows Pro plan for your trading needs. Start with a 7-day free trial. Premium from $49.99/month. Professional from $79.99/month." />
+        <meta name="description" content="Choose the perfect TradeFlows Pro plan for your trading needs. Start with a 3-day free trial. Premium from $49.99/month. Professional from $79.99/month." />
       </Helmet>
 
       <div className="pricing-page">
@@ -383,7 +383,7 @@ export default function PricingPage() {
             <div className="faq-grid">
               <div className="faq-item">
                 <h3>How does the free trial work?</h3>
-                <p>Your 7-day free trial includes full access to all Premium features. You'll need to enter a credit card, but you won't be charged until the trial ends. Cancel anytime during the trial at no cost.</p>
+                <p>Your 3-day free trial includes full access to all Premium features. You'll need to enter a credit card, but you won't be charged until the trial ends. Cancel anytime during the trial at no cost.</p>
               </div>
 
               <div className="faq-item">

@@ -79,7 +79,7 @@ Our platform provides professional-grade tools specifically designed for BTC:
 - **Backtesting capabilities**: Enhance your BTC strategy with cutting-edge technology
 - **AI-powered trade recommendations**: Enhance your BTC strategy with cutting-edge technology
 
-[Start Your Free 7-Day Trial →](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=article&utm_campaign=btc)
+[Start Your Free 3-day Trial →](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=article&utm_campaign=btc)
 
 ## Start Implementing BTC Today
 
@@ -155,7 +155,7 @@ Our platform provides professional-grade tools specifically designed for BTC:
 - **Risk management tools**: Enhance your BTC strategy with cutting-edge technology
 - **Backtesting capabilities**: Enhance your BTC strategy with cutting-edge technology
 
-[Start Your Free 7-Day Trial →](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=article&utm_campaign=btc)
+[Start Your Free 3-day Trial →](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=article&utm_campaign=btc)
 
 ## Crypto Moves Fast - So Should You
 
@@ -260,7 +260,7 @@ All features are available now:
 - **Tax Dashboard:** Add-on ($19.99/mo)
 - **Broker Integration:** Available to all tiers
 
-[Start Your 7-Day Free Trial](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=post&utm_campaign=new-features) and experience these features yourself!
+[Start Your 3-day Free Trial](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=post&utm_campaign=new-features) and experience these features yourself!
 
 ## 💡 What Our Users Are Saying
 
@@ -276,7 +276,7 @@ We're just getting started! Coming soon:
 - Mobile apps (iOS & Android)
 - API access for algo traders
 
-Ready to transform your trading? [Try TradeFlows Pro free for 7 days](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=post&utm_campaign=new-features).
+Ready to transform your trading? [Try TradeFlows Pro free for 3 days](https://app.tradeflows.net?signup=true&utm_source=blog&utm_medium=post&utm_campaign=new-features).
     `
   },
   {
@@ -725,7 +725,7 @@ Our Advanced Portfolio Analytics gives you these insights.
 
 Advanced Portfolio Analytics is available now to all Premium and Professional subscribers. Find it under the "Portfolio" tab in your dashboard.
 
-New to TradeFlows Pro? Start your 7-day free trial to try it out: [app.tradeflows.net/signup](https://app.tradeflows.net?signup=true)
+New to TradeFlows Pro? Start your 3-day free trial to try it out: [app.tradeflows.net/signup](https://app.tradeflows.net?signup=true)
 
 ---
 

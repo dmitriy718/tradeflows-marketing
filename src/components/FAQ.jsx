@@ -82,7 +82,7 @@ export const commonFAQs = {
     },
     {
       question: 'Can I try TradeFlows Pro before purchasing?',
-      answer: 'Yes! We offer a 7-day free trial with full access to all Premium features. No credit card required to start your trial.'
+      answer: 'Yes! We offer a 3-day free trial with full access to all Premium features. No credit card required to start your trial.'
     },
     {
       question: 'What markets and assets are supported?',
@@ -100,7 +100,7 @@ export const commonFAQs = {
   pricing: [
     {
       question: 'How much does TradeFlows Pro cost?',
-      answer: 'We offer three plans: Free ($0 with basic features), Premium ($29.99/month), and Professional ($79.99/month). All paid plans include a 7-day free trial.'
+      answer: 'We offer three plans: Free ($0 with basic features), Premium ($29.99/month), and Professional ($79.99/month). All paid plans include a 3-day free trial.'
     },
     {
       question: 'Can I cancel my subscription anytime?',

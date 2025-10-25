@@ -225,7 +225,7 @@ Address proof must be dated within 3 months:
 
 ### Free Trial
 
-- 7 days of full Premium access
+- 3 days of full Premium access
 - No credit card required
 - Automatically downgrades to free tier after trial
 - Can upgrade to paid plan anytime
@@ -1238,7 +1238,7 @@ AI-powered trading insights:
 
 **Position:** TSLA
 **Unrealized Loss:** -$2,450
-**Held:** 157 days (short-term)
+**Held:** 153 days (short-term)
 
 **Options:**
 1. Harvest loss now → Save $612 in taxes (25% rate)
@@ -2321,7 +2321,7 @@ Everything you need to know about managing your TradeFlows Pro subscription.
 ### Free Trial
 
 **What's Included:**
-- 7 days of full Premium access
+- 3 days of full Premium access
 - All features unlocked
 - No credit card required
 - No automatic charges
@@ -2520,8 +2520,8 @@ Benefits:
 
 **Failed Payment:**
 - Email notification sent
-- 3 retry attempts over 7 days
-- Grace period: 7 days to update payment
+- 3 retry attempts over 3 days
+- Grace period: 3 days to update payment
 - If unresolved: downgrade to Free tier
 
 **Updating Failed Payment:**
@@ -2726,7 +2726,7 @@ For teams and institutions:
 A: Yes! You'll receive credit for unused monthly subscription time applied to annual billing.
 
 **Q: What happens if my payment fails?**
-A: We'll retry 3 times over 7 days. You'll receive email notifications. Update your payment method to avoid service interruption.
+A: We'll retry 3 times over 3 days. You'll receive email notifications. Update your payment method to avoid service interruption.
 
 **Q: Can I transfer my subscription to someone else?**
 A: Subscriptions are non-transferable. The new user should sign up separately. Consider our referral program for credits.

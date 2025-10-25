@@ -368,7 +368,7 @@ export default function FeaturesPage() {
           <div className="container">
             <div className="cta-box">
               <h2>Ready to Experience TradeFlows Pro?</h2>
-              <p>Start your 7-day free trial and see why thousands of traders trust TradeFlows</p>
+              <p>Start your 3-day free trial and see why thousands of traders trust TradeFlows</p>
               <div className="cta-actions">
                 <a href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial" className="btn btn-primary btn-large">
                   Start Free Trial

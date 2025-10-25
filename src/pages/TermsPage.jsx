@@ -103,7 +103,7 @@ export default function TermsPage() {
                 <h3>4.1 Subscription Plans</h3>
                 <p>TradeFlows Pro offers multiple subscription tiers:</p>
                 <ul>
-                  <li><strong>Free Trial:</strong> 7-day trial with full Premium access</li>
+                  <li><strong>Free Trial:</strong> 3-day trial with full Premium access</li>
                   <li><strong>Premium:</strong> $49.99/month or $479.99/year</li>
                   <li><strong>Professional:</strong> $79.99/month or $767.99/year</li>
                 </ul>

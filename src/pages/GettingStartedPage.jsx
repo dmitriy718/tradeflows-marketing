@@ -76,7 +76,7 @@ export default function GettingStartedPage() {
                 <div className="gs-step-number">1</div>
                 <div className="gs-step-icon">👤</div>
                 <h3>Create Your Account</h3>
-                <p>Sign up in seconds with just your email. No credit card required for the 7-day free trial.</p>
+                <p>Sign up in seconds with just your email. No credit card required for the 3-day free trial.</p>
                 <ul className="gs-step-list">
                   <li>Click "Start Free Trial" on our homepage</li>
                   <li>Enter your email and create a secure password</li>
@@ -312,7 +312,7 @@ export default function GettingStartedPage() {
               <p>Join thousands of traders using AI to make better trading decisions</p>
               <div className="gs-next-buttons">
                 <a href="https://app.tradeflows.net?signup=true&plan=trial" className="btn btn-primary btn-large">
-                  Start Free 7-Day Trial
+                  Start Free 3-day Trial
                 </a>
                 <Link to="/pricing" className="btn btn-secondary btn-large">
                   View Pricing Plans

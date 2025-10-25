@@ -21,7 +21,7 @@ export default function HomePage() {
       price: '0',
       priceCurrency: 'USD',
       priceValidUntil: '2026-12-31',
-      description: '7-day free trial, then starting at $19.99/month'
+      description: '3-day free trial, then starting at $19.99/month'
     },
     aggregateRating: {
       '@type': 'AggregateRating',
@@ -45,7 +45,7 @@ export default function HomePage() {
     <>
       <SEO
         title="TradeFlows Pro - AI-Powered Professional Trading Platform"
-        description="Transform your trading with AI-powered strategies, real-time market data, and advanced portfolio analytics. Trade stocks, crypto, forex, and commodities with confidence. Start your 7-day free trial today."
+        description="Transform your trading with AI-powered strategies, real-time market data, and advanced portfolio analytics. Trade stocks, crypto, forex, and commodities with confidence. Start your 3-day free trial today."
         keywords="trading platform, stock trading, crypto trading, AI trading, portfolio management, market analysis, day trading, algorithmic trading, trading software, stock market app"
         canonical="/"
         structuredData={structuredData}
@@ -80,7 +80,7 @@ export default function HomePage() {
                   className="btn btn-hero-primary"
                   onClick={() => trackCTA('Start Free Trial', 'Hero Section')}
                 >
-                  Start Free 7-Day Trial
+                  Start Free 3-day Trial
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                     <path d="M7 10h6m0 0L10 7m3 3-3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -357,7 +357,7 @@ export default function HomePage() {
             <div className="cta-card">
               <div className="cta-content">
                 <h2>Ready to Transform Your Trading?</h2>
-                <p>Start your 7-day free trial. No credit card required. Cancel anytime.</p>
+                <p>Start your 3-day free trial. No credit card required. Cancel anytime.</p>
                 <div className="cta-actions">
                   <a
                     href="https://app.tradeflows.net?signup=true&utm_source=website&utm_medium=navigation&utm_campaign=trial"
