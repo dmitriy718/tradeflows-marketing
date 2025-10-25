@@ -203,7 +203,7 @@
 }
 
 .indicator {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   padding: 1rem;

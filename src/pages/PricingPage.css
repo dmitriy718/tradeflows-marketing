@@ -285,12 +285,12 @@
 }
 
 .pricing-card.highlighted .plan-cta {
-  background: white;
+  background: var(--color-bg-secondary);
   color: var(--color-primary);
 }
 
 .pricing-card.highlighted .plan-cta:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(30, 34, 48, 0.95);
 }
 
 /* Pricing Note */

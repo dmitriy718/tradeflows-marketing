@@ -54,7 +54,7 @@
 .stat-box {
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
 }
@@ -75,7 +75,7 @@
 }
 
 .quick-facts {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
@@ -132,7 +132,7 @@
 }
 
 .asset-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
@@ -222,7 +222,7 @@
 }
 
 .screenshot-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 1.5rem;
@@ -368,7 +368,7 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 24px;
   padding: 3rem;

@@ -54,7 +54,7 @@
   max-width: calc(100vw - 48px);
   height: 600px;
   max-height: calc(100vh - 100px);
-  background: white;
+  background: var(--color-bg-secondary);
   border-radius: 16px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -221,7 +221,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
+  background: var(--color-bg-secondary);
   border-radius: 50%;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -330,7 +330,7 @@
 }
 
 .chat-message.agent .message-bubble {
-  background: white;
+  background: var(--color-bg-secondary);
   color: #1a202c;
   border-bottom-left-radius: 4px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -391,7 +391,7 @@
 
 .quick-reply-btn {
   padding: 8px 14px;
-  background: white;
+  background: var(--color-bg-secondary);
   border: 1px solid #e2e8f0;
   border-radius: 20px;
   font-size: 13px;
@@ -412,7 +412,7 @@
   display: flex;
   gap: 8px;
   padding: 16px;
-  background: white;
+  background: var(--color-bg-secondary);
   border-top: 1px solid #e2e8f0;
   align-items: flex-end;
 }

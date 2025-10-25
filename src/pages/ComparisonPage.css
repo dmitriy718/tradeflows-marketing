@@ -43,7 +43,7 @@
 }
 
 .score-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem 3rem;
@@ -110,7 +110,7 @@
 }
 
 .summary-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 2.5rem;
@@ -226,7 +226,7 @@
 
 .comparison-table-wrapper {
   overflow-x: auto;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border-radius: 16px;
   padding: 1rem;
 }
@@ -362,7 +362,7 @@
 }
 
 .value-card {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(30, 34, 48, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: 2.5rem;
