@@ -104,8 +104,16 @@
   background: #f8fafc;
 }
 
+.faq-question:hover .faq-question-text {
+  color: #1e293b;
+}
+
 .faq-item-open .faq-question {
   background: #f8fafc;
+}
+
+.faq-item-open .faq-question-text {
+  color: #1e293b;
 }
 
 .faq-question-text {
@@ -113,6 +121,7 @@
   font-weight: 600;
   color: #f8f9fa;
   line-height: 1.5;
+  transition: color 0.3s ease;
 }
 
 .faq-toggle {
