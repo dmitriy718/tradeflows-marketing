@@ -147,7 +147,14 @@
       "Bash(npm run dashboard:*)",
       "Bash(npm start)",
       "Bash(echo $ANTHROPIC_API_KEY)",
-      "Bash(npm test:*)"
+      "Bash(npm test:*)",
+      "Bash(npx wrangler deploy)",
+      "Bash(npx wrangler:*)",
+      "Bash(npm run types:check:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run deploy:*)",
+      "Bash(timeout 10 npx wrangler tail:*)",
+      "Bash(git checkout:*)"
     ],
     "deny": [],
     "ask": []
